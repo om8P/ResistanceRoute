@@ -1,0 +1,428 @@
+entity_type,entity_id,canonical_name,synonym,synonym_type
+Pathogen,NCBITaxon:573,Klebsiella pneumoniae,Klebsiella pneumoniae,canonical
+Pathogen,NCBITaxon:573,Klebsiella pneumoniae,K. pneumoniae,abbreviation
+Pathogen,NCBITaxon:573,Klebsiella pneumoniae,K pneumoniae,variant
+Pathogen,NCBITaxon:573,Klebsiella pneumoniae,Klebsiella,variant
+Pathogen,NCBITaxon:573,Klebsiella pneumoniae,CRKP,abbreviation
+Pathogen,NCBITaxon:573,Klebsiella pneumoniae,carbapenem-resistant Klebsiella pneumoniae,variant
+Pathogen,NCBITaxon:573,Klebsiella pneumoniae,KPC-Kp,abbreviation
+Pathogen,NCBITaxon:562,Escherichia coli,Escherichia coli,canonical
+Pathogen,NCBITaxon:562,Escherichia coli,E. coli,abbreviation
+Pathogen,NCBITaxon:562,Escherichia coli,E coli,variant
+Pathogen,NCBITaxon:562,Escherichia coli,Escherichia,variant
+Pathogen,NCBITaxon:562,Escherichia coli,CREC,abbreviation
+Pathogen,NCBITaxon:470,Acinetobacter baumannii,Acinetobacter baumannii,canonical
+Pathogen,NCBITaxon:470,Acinetobacter baumannii,A. baumannii,abbreviation
+Pathogen,NCBITaxon:470,Acinetobacter baumannii,A baumannii,variant
+Pathogen,NCBITaxon:470,Acinetobacter baumannii,Acinetobacter baumanii,variant
+Pathogen,NCBITaxon:470,Acinetobacter baumannii,A. baumanii,variant
+Pathogen,NCBITaxon:470,Acinetobacter baumannii,Acinetobacter,variant
+Pathogen,NCBITaxon:470,Acinetobacter baumannii,CRAB,abbreviation
+Pathogen,NCBITaxon:470,Acinetobacter baumannii,carbapenem-resistant Acinetobacter baumannii,variant
+Pathogen,NCBITaxon:287,Pseudomonas aeruginosa,Pseudomonas aeruginosa,canonical
+Pathogen,NCBITaxon:287,Pseudomonas aeruginosa,P. aeruginosa,abbreviation
+Pathogen,NCBITaxon:287,Pseudomonas aeruginosa,P aeruginosa,variant
+Pathogen,NCBITaxon:287,Pseudomonas aeruginosa,Pseudomonas,variant
+Pathogen,NCBITaxon:287,Pseudomonas aeruginosa,CRPA,abbreviation
+Pathogen,NCBITaxon:287,Pseudomonas aeruginosa,DTR-PA,abbreviation
+Pathogen,NCBITaxon:287,Pseudomonas aeruginosa,DTR-P. aeruginosa,variant
+Pathogen,NCBITaxon:287,Pseudomonas aeruginosa,carbapenem-resistant Pseudomonas aeruginosa,variant
+Pathogen,NCBITaxon:1280,Staphylococcus aureus,Staphylococcus aureus,canonical
+Pathogen,NCBITaxon:1280,Staphylococcus aureus,S. aureus,abbreviation
+Pathogen,NCBITaxon:1280,Staphylococcus aureus,S aureus,variant
+Pathogen,NCBITaxon:1280,Staphylococcus aureus,Staph aureus,variant
+Pathogen,NCBITaxon:1280,Staphylococcus aureus,Staph. aureus,variant
+Pathogen,NCBITaxon:1280,Staphylococcus aureus,MRSA,abbreviation
+Pathogen,NCBITaxon:1280,Staphylococcus aureus,methicillin-resistant Staphylococcus aureus,variant
+Pathogen,NCBITaxon:1280,Staphylococcus aureus,meticillin-resistant Staphylococcus aureus,variant
+Pathogen,NCBITaxon:1280,Staphylococcus aureus,MSSA,abbreviation
+Pathogen,NCBITaxon:1280,Staphylococcus aureus,methicillin-susceptible Staphylococcus aureus,variant
+Mechanism,ARO:3000059,KPC beta-lactamase,KPC beta-lactamase,canonical
+Mechanism,ARO:3000059,KPC beta-lactamase,KPC,abbreviation
+Mechanism,ARO:3000059,KPC beta-lactamase,Klebsiella pneumoniae carbapenemase,variant
+Mechanism,ARO:3000059,KPC beta-lactamase,KPC carbapenemase,variant
+Mechanism,ARO:3000059,KPC beta-lactamase,blaKPC,variant
+Mechanism,ARO:3000059,KPC beta-lactamase,KPC-2,variant
+Mechanism,ARO:3000059,KPC beta-lactamase,KPC-3,variant
+Mechanism,ARO:3000057,NDM beta-lactamase,NDM beta-lactamase,canonical
+Mechanism,ARO:3000057,NDM beta-lactamase,NDM,abbreviation
+Mechanism,ARO:3000057,NDM beta-lactamase,New Delhi metallo-beta-lactamase,variant
+Mechanism,ARO:3000057,NDM beta-lactamase,New Delhi metallo-β-lactamase,variant
+Mechanism,ARO:3000057,NDM beta-lactamase,blaNDM,variant
+Mechanism,ARO:3000057,NDM beta-lactamase,NDM-1,variant
+Mechanism,ARO:3000057,NDM beta-lactamase,NDM-5,variant
+Mechanism,ARO:3000021,VIM beta-lactamase,VIM beta-lactamase,canonical
+Mechanism,ARO:3000021,VIM beta-lactamase,VIM,abbreviation
+Mechanism,ARO:3000021,VIM beta-lactamase,Verona integron-encoded metallo-beta-lactamase,variant
+Mechanism,ARO:3000021,VIM beta-lactamase,Verona integron-encoded metallo-β-lactamase,variant
+Mechanism,ARO:3000021,VIM beta-lactamase,blaVIM,variant
+Mechanism,ARO:3000021,VIM beta-lactamase,VIM-1,variant
+Mechanism,ARO:3000021,VIM beta-lactamase,VIM-2,variant
+Mechanism,ARO:3007721,OXA-48-like beta-lactamase,OXA-48-like beta-lactamase,canonical
+Mechanism,ARO:3007721,OXA-48-like beta-lactamase,OXA-48-like,abbreviation
+Mechanism,ARO:3007721,OXA-48-like beta-lactamase,OXA-48,variant
+Mechanism,ARO:3007721,OXA-48-like beta-lactamase,OXA-48-type,variant
+Mechanism,ARO:3007721,OXA-48-like beta-lactamase,OXA-48-like carbapenemase,variant
+Mechanism,ARO:3007721,OXA-48-like beta-lactamase,blaOXA-48,variant
+Mechanism,ARO:3007721,OXA-48-like beta-lactamase,OXA-181,variant
+Mechanism,ARO:3007721,OXA-48-like beta-lactamase,OXA-232,variant
+Mechanism,ARO:3007721,OXA-48-like beta-lactamase,OXA-244,variant
+Mechanism,ARO:3007710,OXA-23-like beta-lactamase,OXA-23-like beta-lactamase,canonical
+Mechanism,ARO:3007710,OXA-23-like beta-lactamase,OXA-23-like,abbreviation
+Mechanism,ARO:3007710,OXA-23-like beta-lactamase,OXA-23,variant
+Mechanism,ARO:3007710,OXA-23-like beta-lactamase,OXA-23-like carbapenemase,variant
+Mechanism,ARO:3007710,OXA-23-like beta-lactamase,blaOXA-23,variant
+Mechanism,ARO:3000016,CTX-M beta-lactamase (ESBL),CTX-M beta-lactamase (ESBL),canonical
+Mechanism,ARO:3000016,CTX-M beta-lactamase (ESBL),CTX-M beta-lactamase,variant
+Mechanism,ARO:3000016,CTX-M beta-lactamase (ESBL),CTX-M,abbreviation
+Mechanism,ARO:3000016,CTX-M beta-lactamase (ESBL),blaCTX-M,variant
+Mechanism,ARO:3000016,CTX-M beta-lactamase (ESBL),CTX-M-15,variant
+Mechanism,ARO:3000016,CTX-M beta-lactamase (ESBL),CTX-M-14,variant
+Mechanism,ARO:3000016,CTX-M beta-lactamase (ESBL),ESBL,abbreviation
+Mechanism,ARO:3000016,CTX-M beta-lactamase (ESBL),extended-spectrum beta-lactamase,variant
+Mechanism,ARO:3000016,CTX-M beta-lactamase (ESBL),extended-spectrum β-lactamase,variant
+Mechanism,ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),CMY beta-lactamase (plasmid-mediated AmpC),canonical
+Mechanism,ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),CMY beta-lactamase,variant
+Mechanism,ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),CMY,abbreviation
+Mechanism,ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),CMY-2,variant
+Mechanism,ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),blaCMY,variant
+Mechanism,ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),plasmid AmpC,variant
+Mechanism,ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),plasmid-mediated AmpC,variant
+Mechanism,ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),pAmpC,abbreviation
+Mechanism,ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),AmpC,abbreviation
+Mechanism,ARO:3000098,PDC beta-lactamase (chromosomal AmpC overproduction in P. aeruginosa),PDC beta-lactamase (chromosomal AmpC overproduction in P. aeruginosa),canonical
+Mechanism,ARO:3000098,PDC beta-lactamase (chromosomal AmpC overproduction in P. aeruginosa),PDC beta-lactamase,variant
+Mechanism,ARO:3000098,PDC beta-lactamase (chromosomal AmpC overproduction in P. aeruginosa),PDC,abbreviation
+Mechanism,ARO:3000098,PDC beta-lactamase (chromosomal AmpC overproduction in P. aeruginosa),Pseudomonas-derived cephalosporinase,variant
+Mechanism,ARO:3000098,PDC beta-lactamase (chromosomal AmpC overproduction in P. aeruginosa),chromosomal AmpC,variant
+Mechanism,ARO:3000098,PDC beta-lactamase (chromosomal AmpC overproduction in P. aeruginosa),AmpC derepression,variant
+Mechanism,ARO:3000098,PDC beta-lactamase (chromosomal AmpC overproduction in P. aeruginosa),AmpC overproduction,variant
+Mechanism,LOCAL:mech:oprd-porin-loss,OprD porin loss,OprD porin loss,canonical
+Mechanism,LOCAL:mech:oprd-porin-loss,OprD porin loss,OprD loss,variant
+Mechanism,LOCAL:mech:oprd-porin-loss,OprD porin loss,loss of OprD,variant
+Mechanism,LOCAL:mech:oprd-porin-loss,OprD porin loss,OprD deficiency,variant
+Mechanism,LOCAL:mech:oprd-porin-loss,OprD porin loss,OprD,abbreviation
+Mechanism,ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),canonical
+Mechanism,ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),PBP2-like beta-lactam resistant peptidoglycan transpeptidase,variant
+Mechanism,ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),mecA,abbreviation
+Mechanism,ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),PBP2a,abbreviation
+Mechanism,ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),PBP2',variant
+Mechanism,ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),mecC,variant
+Mechanism,ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),methicillin resistance,variant
+Mechanism,ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),meticillin resistance,variant
+Mechanism,ARO:3004268,MCR phosphoethanolamine transferase,MCR phosphoethanolamine transferase,canonical
+Mechanism,ARO:3004268,MCR phosphoethanolamine transferase,MCR,abbreviation
+Mechanism,ARO:3004268,MCR phosphoethanolamine transferase,mcr-1,variant
+Mechanism,ARO:3004268,MCR phosphoethanolamine transferase,mobile colistin resistance,variant
+Mechanism,ARO:3004268,MCR phosphoethanolamine transferase,plasmid-mediated colistin resistance,variant
+Mechanism,ARO:3004271,16S rRNA methyltransferase (G1405),16S rRNA methyltransferase (G1405),canonical
+Mechanism,ARO:3004271,16S rRNA methyltransferase (G1405),16S rRNA methyltransferase,variant
+Mechanism,ARO:3004271,16S rRNA methyltransferase (G1405),16S RMTase,abbreviation
+Mechanism,ARO:3004271,16S rRNA methyltransferase (G1405),16S-RMTase,variant
+Mechanism,ARO:3004271,16S rRNA methyltransferase (G1405),armA,variant
+Mechanism,ARO:3004271,16S rRNA methyltransferase (G1405),rmtB,variant
+Mechanism,ARO:3004271,16S rRNA methyltransferase (G1405),rmtC,variant
+Mechanism,ARO:3004271,16S rRNA methyltransferase (G1405),rmtF,variant
+DrugClass,aminopenicillin,Aminopenicillins,Aminopenicillins,canonical
+DrugClass,aminopenicillin,Aminopenicillins,aminopenicillin,variant
+DrugClass,antistaphylococcal-penicillin,Antistaphylococcal (isoxazolyl) penicillins,Antistaphylococcal (isoxazolyl) penicillins,canonical
+DrugClass,antistaphylococcal-penicillin,Antistaphylococcal (isoxazolyl) penicillins,antistaphylococcal penicillins,variant
+DrugClass,antistaphylococcal-penicillin,Antistaphylococcal (isoxazolyl) penicillins,isoxazolyl penicillins,variant
+DrugClass,antistaphylococcal-penicillin,Antistaphylococcal (isoxazolyl) penicillins,penicillinase-resistant penicillins,variant
+DrugClass,aminopenicillin-bli,Aminopenicillin/clavulanate combinations,Aminopenicillin/clavulanate combinations,canonical
+DrugClass,aminopenicillin-sulbactam,Aminopenicillin/sulbactam combinations,Aminopenicillin/sulbactam combinations,canonical
+DrugClass,antipseudomonal-penicillin-bli,Antipseudomonal penicillin/beta-lactamase-inhibitor combinations,Antipseudomonal penicillin/beta-lactamase-inhibitor combinations,canonical
+DrugClass,antipseudomonal-penicillin-bli,Antipseudomonal penicillin/beta-lactamase-inhibitor combinations,antipseudomonal penicillins,variant
+DrugClass,sulbactam-durlobactam,Sulbactam/durlobactam (Acinetobacter-targeted combination),Sulbactam/durlobactam (Acinetobacter-targeted combination),canonical
+DrugClass,cephalosporin-1st-gen,First-generation cephalosporins,First-generation cephalosporins,canonical
+DrugClass,cephalosporin-1st-gen,First-generation cephalosporins,1st generation cephalosporins,variant
+DrugClass,cephalosporin-1st-gen,First-generation cephalosporins,first-generation cephalosporin,variant
+DrugClass,cephalosporin-2nd-gen,Second-generation cephalosporins,Second-generation cephalosporins,canonical
+DrugClass,cephalosporin-2nd-gen,Second-generation cephalosporins,2nd generation cephalosporins,variant
+DrugClass,cephalosporin-2nd-gen,Second-generation cephalosporins,second-generation cephalosporin,variant
+DrugClass,cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),Third-generation cephalosporins (non-antipseudomonal),canonical
+DrugClass,cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),third-generation cephalosporins,variant
+DrugClass,cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),third-generation cephalosporin,variant
+DrugClass,cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),3rd generation cephalosporins,variant
+DrugClass,cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),3GC,abbreviation
+DrugClass,cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),extended-spectrum cephalosporins,variant
+DrugClass,cephalosporin-3rd-gen-antipseudomonal,Third-generation cephalosporins (antipseudomonal),Third-generation cephalosporins (antipseudomonal),canonical
+DrugClass,cephalosporin-3rd-gen-antipseudomonal,Third-generation cephalosporins (antipseudomonal),antipseudomonal third-generation cephalosporins,variant
+DrugClass,cephalosporin-4th-gen,Fourth-generation cephalosporins,Fourth-generation cephalosporins,canonical
+DrugClass,cephalosporin-4th-gen,Fourth-generation cephalosporins,4th generation cephalosporins,variant
+DrugClass,cephalosporin-4th-gen,Fourth-generation cephalosporins,fourth-generation cephalosporin,variant
+DrugClass,anti-mrsa-cephalosporin,Cephalosporins with anti-MRSA activity,Cephalosporins with anti-MRSA activity,canonical
+DrugClass,anti-mrsa-cephalosporin,Cephalosporins with anti-MRSA activity,anti-MRSA cephalosporins,variant
+DrugClass,anti-mrsa-cephalosporin,Cephalosporins with anti-MRSA activity,fifth-generation cephalosporins,variant
+DrugClass,anti-mrsa-cephalosporin,Cephalosporins with anti-MRSA activity,5th generation cephalosporins,variant
+DrugClass,siderophore-cephalosporin,Siderophore cephalosporins,Siderophore cephalosporins,canonical
+DrugClass,siderophore-cephalosporin,Siderophore cephalosporins,siderophore cephalosporin,variant
+DrugClass,cephalosporin-bli,Cephalosporin/beta-lactamase-inhibitor combinations,Cephalosporin/beta-lactamase-inhibitor combinations,canonical
+DrugClass,cephalosporin-bli,Cephalosporin/beta-lactamase-inhibitor combinations,cephalosporin/beta-lactamase inhibitor combinations,variant
+DrugClass,carbapenem,Carbapenems (antipseudomonal group 2),Carbapenems (antipseudomonal group 2),canonical
+DrugClass,carbapenem,Carbapenems (antipseudomonal group 2),carbapenems,variant
+DrugClass,carbapenem,Carbapenems (antipseudomonal group 2),carbapenem,variant
+DrugClass,carbapenem-group-1,Carbapenems (non-antipseudomonal group 1),Carbapenems (non-antipseudomonal group 1),canonical
+DrugClass,carbapenem-group-1,Carbapenems (non-antipseudomonal group 1),group 1 carbapenems,variant
+DrugClass,carbapenem-bli,Carbapenem/beta-lactamase-inhibitor combinations,Carbapenem/beta-lactamase-inhibitor combinations,canonical
+DrugClass,carbapenem-bli,Carbapenem/beta-lactamase-inhibitor combinations,carbapenem/beta-lactamase inhibitor combinations,variant
+DrugClass,monobactam,Monobactams,Monobactams,canonical
+DrugClass,monobactam,Monobactams,monobactam,variant
+DrugClass,monobactam-bli,Monobactam/beta-lactamase-inhibitor combinations,Monobactam/beta-lactamase-inhibitor combinations,canonical
+DrugClass,aminoglycoside,Aminoglycosides,Aminoglycosides,canonical
+DrugClass,aminoglycoside,Aminoglycosides,aminoglycoside,variant
+DrugClass,fluoroquinolone,Fluoroquinolones,Fluoroquinolones,canonical
+DrugClass,fluoroquinolone,Fluoroquinolones,fluoroquinolone,variant
+DrugClass,fluoroquinolone,Fluoroquinolones,quinolones,variant
+DrugClass,fluoroquinolone,Fluoroquinolones,FQ,abbreviation
+DrugClass,polymyxin,Polymyxins,Polymyxins,canonical
+DrugClass,polymyxin,Polymyxins,polymyxin,variant
+DrugClass,tetracycline,Tetracyclines,Tetracyclines,canonical
+DrugClass,tetracycline,Tetracyclines,tetracycline,variant
+DrugClass,glycylcycline,Glycylcyclines,Glycylcyclines,canonical
+DrugClass,glycylcycline,Glycylcyclines,glycylcycline,variant
+DrugClass,phosphonic,Phosphonic acid derivatives,Phosphonic acid derivatives,canonical
+DrugClass,phosphonic,Phosphonic acid derivatives,phosphonics,variant
+DrugClass,phosphonic,Phosphonic acid derivatives,phosphonic antibiotics,variant
+DrugClass,glycopeptide,Glycopeptides,Glycopeptides,canonical
+DrugClass,glycopeptide,Glycopeptides,glycopeptide,variant
+DrugClass,lipoglycopeptide,Lipoglycopeptides,Lipoglycopeptides,canonical
+DrugClass,lipoglycopeptide,Lipoglycopeptides,lipoglycopeptide,variant
+DrugClass,oxazolidinone,Oxazolidinones,Oxazolidinones,canonical
+DrugClass,oxazolidinone,Oxazolidinones,oxazolidinone,variant
+DrugClass,lipopeptide,Lipopeptides,Lipopeptides,canonical
+DrugClass,lipopeptide,Lipopeptides,cyclic lipopeptides,variant
+DrugClass,sulfonamide-trimethoprim,Sulfonamide-trimethoprim combinations,Sulfonamide-trimethoprim combinations,canonical
+DrugClass,sulfonamide-trimethoprim,Sulfonamide-trimethoprim combinations,sulfonamide-trimethoprim combination,variant
+DrugClass,nitrofuran,Nitrofuran derivatives,Nitrofuran derivatives,canonical
+DrugClass,nitrofuran,Nitrofuran derivatives,nitrofurans,variant
+DrugClass,lincosamide,Lincosamides,Lincosamides,canonical
+DrugClass,lincosamide,Lincosamides,lincosamide,variant
+Drug,J01CA01,ampicillin,ampicillin,canonical
+Drug,J01CA01,ampicillin,AMP,abbreviation
+Drug,J01CA04,amoxicillin,amoxicillin,canonical
+Drug,J01CA04,amoxicillin,amoxycillin,variant
+Drug,J01CA04,amoxicillin,AMX,abbreviation
+Drug,J01CA04,amoxicillin,Amoxil,brand
+Drug,J01CF02,cloxacillin,cloxacillin,canonical
+Drug,J01CF05,flucloxacillin,flucloxacillin,canonical
+Drug,J01CF05,flucloxacillin,floxacillin,variant
+Drug,J01CF05,flucloxacillin,Floxapen,brand
+Drug,J01CR02,amoxicillin-clavulanic acid,amoxicillin-clavulanic acid,canonical
+Drug,J01CR02,amoxicillin-clavulanic acid,amoxicillin/clavulanic acid,variant
+Drug,J01CR02,amoxicillin-clavulanic acid,amoxicillin-clavulanate,variant
+Drug,J01CR02,amoxicillin-clavulanic acid,amoxicillin/clavulanate,variant
+Drug,J01CR02,amoxicillin-clavulanic acid,co-amoxiclav,variant
+Drug,J01CR02,amoxicillin-clavulanic acid,AMC,abbreviation
+Drug,J01CR02,amoxicillin-clavulanic acid,Augmentin,brand
+Drug,J01CR01,ampicillin-sulbactam,ampicillin-sulbactam,canonical
+Drug,J01CR01,ampicillin-sulbactam,ampicillin/sulbactam,variant
+Drug,J01CR01,ampicillin-sulbactam,SAM,abbreviation
+Drug,J01CR01,ampicillin-sulbactam,Unasyn,brand
+Drug,J01CR05,piperacillin-tazobactam,piperacillin-tazobactam,canonical
+Drug,J01CR05,piperacillin-tazobactam,piperacillin/tazobactam,variant
+Drug,J01CR05,piperacillin-tazobactam,pip-tazo,variant
+Drug,J01CR05,piperacillin-tazobactam,pip/tazo,variant
+Drug,J01CR05,piperacillin-tazobactam,TZP,abbreviation
+Drug,J01CR05,piperacillin-tazobactam,Tazocin,brand
+Drug,J01CR05,piperacillin-tazobactam,Zosyn,brand
+Drug,J01CG30,sulbactam-durlobactam,sulbactam-durlobactam,canonical
+Drug,J01CG30,sulbactam-durlobactam,sulbactam/durlobactam,variant
+Drug,J01CG30,sulbactam-durlobactam,SUL-DUR,abbreviation
+Drug,J01CG30,sulbactam-durlobactam,Xacduro,brand
+Drug,J01DB04,cefazolin,cefazolin,canonical
+Drug,J01DB04,cefazolin,cephazolin,variant
+Drug,J01DB04,cefazolin,CZO,abbreviation
+Drug,J01DC02,cefuroxime,cefuroxime,canonical
+Drug,J01DC02,cefuroxime,CXM,abbreviation
+Drug,J01DC02,cefuroxime,Zinacef,brand
+Drug,J01DC02,cefuroxime,Zinnat,brand
+Drug,J01DD04,ceftriaxone,ceftriaxone,canonical
+Drug,J01DD04,ceftriaxone,CRO,abbreviation
+Drug,J01DD04,ceftriaxone,Rocephin,brand
+Drug,J01DD01,cefotaxime,cefotaxime,canonical
+Drug,J01DD01,cefotaxime,CTX,abbreviation
+Drug,J01DD01,cefotaxime,Claforan,brand
+Drug,J01DD02,ceftazidime,ceftazidime,canonical
+Drug,J01DD02,ceftazidime,CAZ,abbreviation
+Drug,J01DD02,ceftazidime,Fortaz,brand
+Drug,J01DD02,ceftazidime,Fortum,brand
+Drug,J01DE01,cefepime,cefepime,canonical
+Drug,J01DE01,cefepime,FEP,abbreviation
+Drug,J01DE01,cefepime,Maxipime,brand
+Drug,J01DI02,ceftaroline fosamil,ceftaroline fosamil,canonical
+Drug,J01DI02,ceftaroline fosamil,ceftaroline,variant
+Drug,J01DI02,ceftaroline fosamil,CPT,abbreviation
+Drug,J01DI02,ceftaroline fosamil,Teflaro,brand
+Drug,J01DI02,ceftaroline fosamil,Zinforo,brand
+Drug,J01DI04,cefiderocol,cefiderocol,canonical
+Drug,J01DI04,cefiderocol,FDC,abbreviation
+Drug,J01DI04,cefiderocol,Fetroja,brand
+Drug,J01DI04,cefiderocol,Fetcroja,brand
+Drug,J01DD52,ceftazidime-avibactam,ceftazidime-avibactam,canonical
+Drug,J01DD52,ceftazidime-avibactam,ceftazidime/avibactam,variant
+Drug,J01DD52,ceftazidime-avibactam,CZA,abbreviation
+Drug,J01DD52,ceftazidime-avibactam,CAZ-AVI,abbreviation
+Drug,J01DD52,ceftazidime-avibactam,Avycaz,brand
+Drug,J01DD52,ceftazidime-avibactam,Zavicefta,brand
+Drug,J01DI54,ceftolozane-tazobactam,ceftolozane-tazobactam,canonical
+Drug,J01DI54,ceftolozane-tazobactam,ceftolozane/tazobactam,variant
+Drug,J01DI54,ceftolozane-tazobactam,C/T,abbreviation
+Drug,J01DI54,ceftolozane-tazobactam,Zerbaxa,brand
+Drug,J01DH02,meropenem,meropenem,canonical
+Drug,J01DH02,meropenem,MEM,abbreviation
+Drug,J01DH02,meropenem,Merrem,brand
+Drug,J01DH02,meropenem,Meronem,brand
+Drug,J01DH51,imipenem-cilastatin,imipenem-cilastatin,canonical
+Drug,J01DH51,imipenem-cilastatin,imipenem/cilastatin,variant
+Drug,J01DH51,imipenem-cilastatin,imipenem,variant
+Drug,J01DH51,imipenem-cilastatin,IPM,abbreviation
+Drug,J01DH51,imipenem-cilastatin,Primaxin,brand
+Drug,J01DH51,imipenem-cilastatin,Tienam,brand
+Drug,J01DH03,ertapenem,ertapenem,canonical
+Drug,J01DH03,ertapenem,ETP,abbreviation
+Drug,J01DH03,ertapenem,Invanz,brand
+Drug,J01DH52,meropenem-vaborbactam,meropenem-vaborbactam,canonical
+Drug,J01DH52,meropenem-vaborbactam,meropenem/vaborbactam,variant
+Drug,J01DH52,meropenem-vaborbactam,MEV,abbreviation
+Drug,J01DH52,meropenem-vaborbactam,Vabomere,brand
+Drug,J01DH52,meropenem-vaborbactam,Vaborem,brand
+Drug,J01DH56,imipenem-cilastatin-relebactam,imipenem-cilastatin-relebactam,canonical
+Drug,J01DH56,imipenem-cilastatin-relebactam,imipenem-relebactam,variant
+Drug,J01DH56,imipenem-cilastatin-relebactam,imipenem/relebactam,variant
+Drug,J01DH56,imipenem-cilastatin-relebactam,IMR,abbreviation
+Drug,J01DH56,imipenem-cilastatin-relebactam,Recarbrio,brand
+Drug,J01DF01,aztreonam,aztreonam,canonical
+Drug,J01DF01,aztreonam,ATM,abbreviation
+Drug,J01DF01,aztreonam,Azactam,brand
+Drug,J01DF51,aztreonam-avibactam,aztreonam-avibactam,canonical
+Drug,J01DF51,aztreonam-avibactam,aztreonam/avibactam,variant
+Drug,J01DF51,aztreonam-avibactam,ATM-AVI,abbreviation
+Drug,J01DF51,aztreonam-avibactam,Emblaveo,brand
+Drug,J01GB03,gentamicin,gentamicin,canonical
+Drug,J01GB03,gentamicin,gentamycin,variant
+Drug,J01GB06,amikacin,amikacin,canonical
+Drug,J01GB06,amikacin,AMK,abbreviation
+Drug,J01GB01,tobramycin,tobramycin,canonical
+Drug,J01GB01,tobramycin,TOB,abbreviation
+Drug,J01GB14,plazomicin,plazomicin,canonical
+Drug,J01GB14,plazomicin,PLZ,abbreviation
+Drug,J01GB14,plazomicin,Zemdri,brand
+Drug,J01MA02,ciprofloxacin,ciprofloxacin,canonical
+Drug,J01MA02,ciprofloxacin,CIP,abbreviation
+Drug,J01MA02,ciprofloxacin,Ciproxin,brand
+Drug,J01MA12,levofloxacin,levofloxacin,canonical
+Drug,J01MA12,levofloxacin,LVX,abbreviation
+Drug,J01MA12,levofloxacin,Levaquin,brand
+Drug,J01MA12,levofloxacin,Tavanic,brand
+Drug,J01MA14,moxifloxacin,moxifloxacin,canonical
+Drug,J01MA14,moxifloxacin,MXF,abbreviation
+Drug,J01MA14,moxifloxacin,Avelox,brand
+Drug,J01XB01,colistin,colistin,canonical
+Drug,J01XB01,colistin,colistimethate,variant
+Drug,J01XB01,colistin,colistimethate sodium,variant
+Drug,J01XB01,colistin,polymyxin E,variant
+Drug,J01XB01,colistin,CST,abbreviation
+Drug,J01XB01,colistin,Colomycin,brand
+Drug,J01XB02,polymyxin B,polymyxin B,canonical
+Drug,J01XB02,polymyxin B,PMB,abbreviation
+Drug,J01AA02,doxycycline,doxycycline,canonical
+Drug,J01AA02,doxycycline,Vibramycin,brand
+Drug,J01AA08,minocycline,minocycline,canonical
+Drug,J01AA08,minocycline,Minocin,brand
+Drug,J01AA13,eravacycline,eravacycline,canonical
+Drug,J01AA13,eravacycline,ERV,abbreviation
+Drug,J01AA13,eravacycline,Xerava,brand
+Drug,J01AA12,tigecycline,tigecycline,canonical
+Drug,J01AA12,tigecycline,TGC,abbreviation
+Drug,J01AA12,tigecycline,Tygacil,brand
+Drug,J01XX01,fosfomycin,fosfomycin,canonical
+Drug,J01XX01,fosfomycin,fosfomycin trometamol,variant
+Drug,J01XX01,fosfomycin,fosfomycin tromethamine,variant
+Drug,J01XX01,fosfomycin,FOS,abbreviation
+Drug,J01XX01,fosfomycin,Monurol,brand
+Drug,J01EE01,sulfamethoxazole-trimethoprim,sulfamethoxazole-trimethoprim,canonical
+Drug,J01EE01,sulfamethoxazole-trimethoprim,trimethoprim-sulfamethoxazole,variant
+Drug,J01EE01,sulfamethoxazole-trimethoprim,trimethoprim/sulfamethoxazole,variant
+Drug,J01EE01,sulfamethoxazole-trimethoprim,sulfamethoxazole/trimethoprim,variant
+Drug,J01EE01,sulfamethoxazole-trimethoprim,co-trimoxazole,variant
+Drug,J01EE01,sulfamethoxazole-trimethoprim,cotrimoxazole,variant
+Drug,J01EE01,sulfamethoxazole-trimethoprim,TMP-SMX,abbreviation
+Drug,J01EE01,sulfamethoxazole-trimethoprim,TMP/SMX,abbreviation
+Drug,J01EE01,sulfamethoxazole-trimethoprim,SXT,abbreviation
+Drug,J01EE01,sulfamethoxazole-trimethoprim,Bactrim,brand
+Drug,J01EE01,sulfamethoxazole-trimethoprim,Septra,brand
+Drug,J01XE01,nitrofurantoin,nitrofurantoin,canonical
+Drug,J01XE01,nitrofurantoin,NIT,abbreviation
+Drug,J01XE01,nitrofurantoin,Macrobid,brand
+Drug,J01XE01,nitrofurantoin,Macrodantin,brand
+Drug,J01XA01,vancomycin,vancomycin,canonical
+Drug,J01XA01,vancomycin,Vancocin,brand
+Drug,J01XA02,teicoplanin,teicoplanin,canonical
+Drug,J01XA02,teicoplanin,TEC,abbreviation
+Drug,J01XA02,teicoplanin,Targocid,brand
+Drug,J01XA04,dalbavancin,dalbavancin,canonical
+Drug,J01XA04,dalbavancin,Dalvance,brand
+Drug,J01XA04,dalbavancin,Xydalba,brand
+Drug,J01XA05,oritavancin,oritavancin,canonical
+Drug,J01XA05,oritavancin,Orbactiv,brand
+Drug,J01XA05,oritavancin,Kimyrsa,brand
+Drug,J01XX08,linezolid,linezolid,canonical
+Drug,J01XX08,linezolid,LZD,abbreviation
+Drug,J01XX08,linezolid,Zyvox,brand
+Drug,J01XX08,linezolid,Zyvoxid,brand
+Drug,J01XX11,tedizolid,tedizolid,canonical
+Drug,J01XX11,tedizolid,tedizolid phosphate,variant
+Drug,J01XX11,tedizolid,TZD,abbreviation
+Drug,J01XX11,tedizolid,Sivextro,brand
+Drug,J01XX09,daptomycin,daptomycin,canonical
+Drug,J01XX09,daptomycin,DAP,abbreviation
+Drug,J01XX09,daptomycin,Cubicin,brand
+Drug,J01FF01,clindamycin,clindamycin,canonical
+Drug,J01FF01,clindamycin,CLI,abbreviation
+Drug,J01FF01,clindamycin,Cleocin,brand
+Drug,J01FF01,clindamycin,Dalacin,brand
+ClassFamily,penicillin,Penicillins,Penicillins,canonical
+ClassFamily,penicillin,Penicillins,penicillin,variant
+ClassFamily,penicillin,Penicillins,penams,variant
+ClassFamily,beta-lactam-bli,Beta-lactam/beta-lactamase-inhibitor combinations,Beta-lactam/beta-lactamase-inhibitor combinations,canonical
+ClassFamily,beta-lactam-bli,Beta-lactam/beta-lactamase-inhibitor combinations,beta-lactam/beta-lactamase inhibitor combinations,variant
+ClassFamily,beta-lactam-bli,Beta-lactam/beta-lactamase-inhibitor combinations,β-lactam/β-lactamase inhibitor combinations,variant
+ClassFamily,beta-lactam-bli,Beta-lactam/beta-lactamase-inhibitor combinations,beta-lactam/beta-lactamase inhibitors,variant
+ClassFamily,beta-lactam-bli,Beta-lactam/beta-lactamase-inhibitor combinations,beta-lactamase inhibitor combinations,variant
+ClassFamily,beta-lactam-bli,Beta-lactam/beta-lactamase-inhibitor combinations,BL/BLI,abbreviation
+ClassFamily,beta-lactam-bli,Beta-lactam/beta-lactamase-inhibitor combinations,BLBLI,abbreviation
+ClassFamily,cephalosporin,Cephalosporins,Cephalosporins,canonical
+ClassFamily,cephalosporin,Cephalosporins,cephalosporin,variant
+ClassFamily,cephalosporin,Cephalosporins,cephems,variant
+ClassFamily,carbapenem,Carbapenems,Carbapenems,canonical
+ClassFamily,carbapenem,Carbapenems,carbapenem,variant
+ClassFamily,monobactam,Monobactams,Monobactams,canonical
+ClassFamily,monobactam,Monobactams,monobactam,variant
+ClassFamily,aminoglycoside,Aminoglycosides,Aminoglycosides,canonical
+ClassFamily,aminoglycoside,Aminoglycosides,aminoglycoside,variant
+ClassFamily,fluoroquinolone,Fluoroquinolones,Fluoroquinolones,canonical
+ClassFamily,fluoroquinolone,Fluoroquinolones,fluoroquinolone,variant
+ClassFamily,fluoroquinolone,Fluoroquinolones,quinolones,variant
+ClassFamily,fluoroquinolone,Fluoroquinolones,FQ,abbreviation
+ClassFamily,polymyxin,Polymyxins,Polymyxins,canonical
+ClassFamily,polymyxin,Polymyxins,polymyxin,variant
+ClassFamily,tetracycline,Tetracyclines,Tetracyclines,canonical
+ClassFamily,tetracycline,Tetracyclines,tetracycline,variant
+ClassFamily,tetracycline,Tetracyclines,tetracycline class,variant
+ClassFamily,phosphonic,Phosphonic acid derivatives,Phosphonic acid derivatives,canonical
+ClassFamily,phosphonic,Phosphonic acid derivatives,phosphonics,variant
+ClassFamily,glycopeptide,Glycopeptides,Glycopeptides,canonical
+ClassFamily,glycopeptide,Glycopeptides,glycopeptide,variant
+ClassFamily,glycopeptide,Glycopeptides,glycopeptides and lipoglycopeptides,variant
+ClassFamily,oxazolidinone,Oxazolidinones,Oxazolidinones,canonical
+ClassFamily,oxazolidinone,Oxazolidinones,oxazolidinone,variant
+ClassFamily,lipopeptide,Lipopeptides,Lipopeptides,canonical
+ClassFamily,lipopeptide,Lipopeptides,lipopeptide,variant
+ClassFamily,sulfonamide-trimethoprim,Sulfonamide-trimethoprim combinations,Sulfonamide-trimethoprim combinations,canonical
+ClassFamily,sulfonamide-trimethoprim,Sulfonamide-trimethoprim combinations,sulfonamides,variant
+ClassFamily,sulfonamide-trimethoprim,Sulfonamide-trimethoprim combinations,folate pathway inhibitors,variant
+ClassFamily,nitrofuran,Nitrofuran derivatives,Nitrofuran derivatives,canonical
+ClassFamily,nitrofuran,Nitrofuran derivatives,nitrofurans,variant
+ClassFamily,lincosamide,Lincosamides,Lincosamides,canonical
+ClassFamily,lincosamide,Lincosamides,lincosamide,variant

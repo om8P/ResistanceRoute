@@ -1,0 +1,68 @@
+mechanism_id,mechanism_name,class_id,class_name,source,needs_review,notes
+ARO:3000059,KPC beta-lactamase,aminopenicillin,Aminopenicillins,CARD,false,CARD drug classes for the KPC family include penam.
+ARO:3000059,KPC beta-lactamase,cephalosporin-1st-gen,First-generation cephalosporins,CARD,false,CARD drug classes for the KPC family include cephalosporin.
+ARO:3000059,KPC beta-lactamase,cephalosporin-2nd-gen,Second-generation cephalosporins,CARD,false,
+ARO:3000059,KPC beta-lactamase,cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),CARD|IDSA-AMR-GN-2024,false,
+ARO:3000059,KPC beta-lactamase,cephalosporin-3rd-gen-antipseudomonal,Third-generation cephalosporins (antipseudomonal),CARD|IDSA-AMR-GN-2024,false,
+ARO:3000059,KPC beta-lactamase,cephalosporin-4th-gen,Fourth-generation cephalosporins,CARD|IDSA-AMR-GN-2024,false,
+ARO:3000059,KPC beta-lactamase,anti-mrsa-cephalosporin,Cephalosporins with anti-MRSA activity,CARD,false,Ceftaroline is not stable to KPC.
+ARO:3000059,KPC beta-lactamase,carbapenem,Carbapenems (antipseudomonal group 2),CARD|IDSA-AMR-GN-2024,false,
+ARO:3000059,KPC beta-lactamase,carbapenem-group-1,Carbapenems (non-antipseudomonal group 1),CARD|IDSA-AMR-GN-2024,false,
+ARO:3000059,KPC beta-lactamase,monobactam,Monobactams,CARD,false,CARD drug classes for the KPC family include monobactam.
+ARO:3000057,NDM beta-lactamase,aminopenicillin,Aminopenicillins,CARD,false,CARD drug classes for the NDM family include penam.
+ARO:3000057,NDM beta-lactamase,cephalosporin-1st-gen,First-generation cephalosporins,CARD,false,
+ARO:3000057,NDM beta-lactamase,cephalosporin-2nd-gen,Second-generation cephalosporins,CARD,false,
+ARO:3000057,NDM beta-lactamase,cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),CARD|IDSA-AMR-GN-2024,false,
+ARO:3000057,NDM beta-lactamase,cephalosporin-3rd-gen-antipseudomonal,Third-generation cephalosporins (antipseudomonal),CARD|IDSA-AMR-GN-2024,false,
+ARO:3000057,NDM beta-lactamase,cephalosporin-4th-gen,Fourth-generation cephalosporins,CARD|IDSA-AMR-GN-2024,false,
+ARO:3000057,NDM beta-lactamase,anti-mrsa-cephalosporin,Cephalosporins with anti-MRSA activity,CARD,false,
+ARO:3000057,NDM beta-lactamase,carbapenem,Carbapenems (antipseudomonal group 2),CARD|IDSA-AMR-GN-2024,false,
+ARO:3000057,NDM beta-lactamase,carbapenem-group-1,Carbapenems (non-antipseudomonal group 1),CARD|IDSA-AMR-GN-2024,false,No monobactam row: metallo-beta-lactamases do not hydrolyse aztreonam (see REVIEW_NOTES on co-produced enzymes).
+ARO:3000021,VIM beta-lactamase,aminopenicillin,Aminopenicillins,CARD,false,CARD drug classes for the VIM family include penam.
+ARO:3000021,VIM beta-lactamase,cephalosporin-1st-gen,First-generation cephalosporins,CARD,false,
+ARO:3000021,VIM beta-lactamase,cephalosporin-2nd-gen,Second-generation cephalosporins,CARD,false,
+ARO:3000021,VIM beta-lactamase,cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),CARD|IDSA-AMR-GN-2024,false,
+ARO:3000021,VIM beta-lactamase,cephalosporin-3rd-gen-antipseudomonal,Third-generation cephalosporins (antipseudomonal),CARD|IDSA-AMR-GN-2024,false,
+ARO:3000021,VIM beta-lactamase,cephalosporin-4th-gen,Fourth-generation cephalosporins,CARD|IDSA-AMR-GN-2024,false,
+ARO:3000021,VIM beta-lactamase,anti-mrsa-cephalosporin,Cephalosporins with anti-MRSA activity,CARD,false,
+ARO:3000021,VIM beta-lactamase,carbapenem,Carbapenems (antipseudomonal group 2),CARD|IDSA-AMR-GN-2024,false,
+ARO:3000021,VIM beta-lactamase,carbapenem-group-1,Carbapenems (non-antipseudomonal group 1),CARD|IDSA-AMR-GN-2024,false,No monobactam row: metallo-beta-lactamases do not hydrolyse aztreonam.
+ARO:3007721,OXA-48-like beta-lactamase,aminopenicillin,Aminopenicillins,CARD,false,CARD: penicillins are hydrolysed efficiently.
+ARO:3007721,OXA-48-like beta-lactamase,carbapenem,Carbapenems (antipseudomonal group 2),CARD|IDSA-AMR-GN-2024,false,Carbapenem hydrolysis is weak; meropenem MICs can test low. Classed as resistant because OXA-48-like producers are carbapenemase producers.
+ARO:3007721,OXA-48-like beta-lactamase,carbapenem-group-1,Carbapenems (non-antipseudomonal group 1),CARD|IDSA-AMR-GN-2024,false,Ertapenem is the carbapenem most affected.
+ARO:3007710,OXA-23-like beta-lactamase,aminopenicillin,Aminopenicillins,CARD,false,CARD aro_index drug classes for the OXA-23-like family include penicillin beta-lactam. A. baumannii is also intrinsically resistant.
+ARO:3007710,OXA-23-like beta-lactamase,carbapenem,Carbapenems (antipseudomonal group 2),CARD|IDSA-AMR-GN-2024,false,Main cause of carbapenem resistance in A. baumannii.
+ARO:3007710,OXA-23-like beta-lactamase,carbapenem-group-1,Carbapenems (non-antipseudomonal group 1),CARD|IDSA-AMR-GN-2024,false,
+ARO:3000016,CTX-M beta-lactamase (ESBL),aminopenicillin,Aminopenicillins,CARD,false,CARD aro_index drug classes for the CTX-M family include penicillin beta-lactam.
+ARO:3000016,CTX-M beta-lactamase (ESBL),cephalosporin-1st-gen,First-generation cephalosporins,CARD,false,
+ARO:3000016,CTX-M beta-lactamase (ESBL),cephalosporin-2nd-gen,Second-generation cephalosporins,CARD,false,
+ARO:3000016,CTX-M beta-lactamase (ESBL),cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),CARD|IDSA-AMR-GN-2024,false,CTX-M enzymes hydrolyse cefotaxime and ceftriaxone efficiently.
+ARO:3000016,CTX-M beta-lactamase (ESBL),cephalosporin-3rd-gen-antipseudomonal,Third-generation cephalosporins (antipseudomonal),CARD,true,Ceftazidime hydrolysis varies by variant: high for CTX-M-15 and low for CTX-M-14.
+ARO:3000016,CTX-M beta-lactamase (ESBL),cephalosporin-4th-gen,Fourth-generation cephalosporins,CARD|IDSA-AMR-GN-2024,true,Cefepime hydrolysis is variable; IDSA advises against cefepime for ESBL-E infections even when it tests susceptible.
+ARO:3000016,CTX-M beta-lactamase (ESBL),anti-mrsa-cephalosporin,Cephalosporins with anti-MRSA activity,CARD,false,Ceftaroline is not stable to ESBLs.
+ARO:3000016,CTX-M beta-lactamase (ESBL),monobactam,Monobactams,unverified,true,ESBLs (Bush-Jacoby group 2be) hydrolyse aztreonam; not confirmed in a listed source.
+ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),aminopenicillin,Aminopenicillins,CARD,false,CARD aro_index drug classes for the CMY family include penicillin beta-lactam.
+ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),cephalosporin-1st-gen,First-generation cephalosporins,CARD,false,
+ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),cephalosporin-2nd-gen,Second-generation cephalosporins,CARD,false,CMY confers resistance to cephamycins and second-generation cephalosporins.
+ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),CARD|IDSA-AMR-GN-2024,false,
+ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),cephalosporin-3rd-gen-antipseudomonal,Third-generation cephalosporins (antipseudomonal),CARD,false,
+ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),anti-mrsa-cephalosporin,Cephalosporins with anti-MRSA activity,CARD,true,Ceftaroline is hydrolysed by AmpC; not confirmed for CMY specifically.
+ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),monobactam,Monobactams,unverified,true,AmpC hydrolysis of aztreonam is moderate; reviewer to confirm a class-level edge.
+ARO:3000098,PDC beta-lactamase (chromosomal AmpC overproduction in P. aeruginosa),cephalosporin-3rd-gen-antipseudomonal,Third-generation cephalosporins (antipseudomonal),CARD|IDSA-AMR-GN-2024,false,Derepressed PDC raises ceftazidime MICs.
+ARO:3000098,PDC beta-lactamase (chromosomal AmpC overproduction in P. aeruginosa),monobactam,Monobactams,CARD,false,CARD drug classes for PDC include monobactam. No cefepime row: cefepime is relatively stable to PDC (see REVIEW_NOTES).
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),aminopenicillin,Aminopenicillins,CARD|EUCAST-expert-rules,false,PBP2a has low affinity for almost all beta-lactams.
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),antistaphylococcal-penicillin,Antistaphylococcal (isoxazolyl) penicillins,CARD|EUCAST-expert-rules,false,Defines methicillin (oxacillin/cloxacillin/flucloxacillin) resistance.
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),aminopenicillin-bli,Aminopenicillin/clavulanate combinations,CARD|EUCAST-expert-rules,false,Inhibitors do not help against a target change.
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),aminopenicillin-sulbactam,Aminopenicillin/sulbactam combinations,CARD|EUCAST-expert-rules,false,
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),antipseudomonal-penicillin-bli,Antipseudomonal penicillin/beta-lactamase-inhibitor combinations,CARD|EUCAST-expert-rules,false,
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),cephalosporin-1st-gen,First-generation cephalosporins,CARD|EUCAST-expert-rules,false,
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),cephalosporin-2nd-gen,Second-generation cephalosporins,CARD|EUCAST-expert-rules,false,
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),CARD|EUCAST-expert-rules,false,
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),cephalosporin-3rd-gen-antipseudomonal,Third-generation cephalosporins (antipseudomonal),CARD|EUCAST-expert-rules,false,
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),cephalosporin-4th-gen,Fourth-generation cephalosporins,CARD|EUCAST-expert-rules,false,
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),cephalosporin-bli,Cephalosporin/beta-lactamase-inhibitor combinations,CARD|EUCAST-expert-rules,false,
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),carbapenem,Carbapenems (antipseudomonal group 2),CARD|EUCAST-expert-rules,false,
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),carbapenem-group-1,Carbapenems (non-antipseudomonal group 1),CARD|EUCAST-expert-rules,false,
+ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),carbapenem-bli,Carbapenem/beta-lactamase-inhibitor combinations,CARD|EUCAST-expert-rules,false,No row for anti-mrsa-cephalosporin: ceftaroline binds PBP2a.
+ARO:3004268,MCR phosphoethanolamine transferase,polymyxin,Polymyxins,CARD,false,CARD: target alteration conferring resistance to peptide antibiotics (colistin and polymyxin B).
+ARO:3004271,16S rRNA methyltransferase (G1405),aminoglycoside,Aminoglycosides,CARD,false,"N7-G1405 methylation confers high-level resistance to gentamicin, tobramycin, amikacin and plazomicin (all 4,6-disubstituted)."

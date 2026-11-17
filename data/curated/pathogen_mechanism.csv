@@ -1,0 +1,27 @@
+pathogen_id,pathogen_name,mechanism_id,mechanism_name,source,needs_review,notes
+NCBITaxon:573,Klebsiella pneumoniae,ARO:3000059,KPC beta-lactamase,CARD|IDSA-AMR-GN-2024,false,Most common carbapenemase in K. pneumoniae in many regions; CARD lists K. pneumoniae as the source organism of KPC-2.
+NCBITaxon:573,Klebsiella pneumoniae,ARO:3000057,NDM beta-lactamase,CARD|IDSA-AMR-GN-2024,false,NDM-1 was first described in K. pneumoniae (CARD ARO:3000589).
+NCBITaxon:573,Klebsiella pneumoniae,ARO:3000021,VIM beta-lactamase,CARD,false,VIM variants are reported in K. pneumoniae (CARD prevalence data).
+NCBITaxon:573,Klebsiella pneumoniae,ARO:3007721,OXA-48-like beta-lactamase,CARD|IDSA-AMR-GN-2024,false,OXA-48 and OXA-181/OXA-232 are found in K. pneumoniae (CARD).
+NCBITaxon:573,Klebsiella pneumoniae,ARO:3000016,CTX-M beta-lactamase (ESBL),CARD|IDSA-AMR-GN-2024,false,CTX-M-15 is the dominant ESBL in K. pneumoniae.
+NCBITaxon:573,Klebsiella pneumoniae,ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),CARD,true,Plasmid AmpC in K. pneumoniae is often DHA-type rather than CMY; CMY is used here as the representative plasmid AmpC family.
+NCBITaxon:573,Klebsiella pneumoniae,ARO:3004268,MCR phosphoethanolamine transferase,CARD,true,MCR genes occur in K. pneumoniae (CARD lists MCR-7.1 from a K. pneumoniae isolate) but colistin resistance in K. pneumoniae is mostly chromosomal (mgrB/pmrAB) and is not modelled.
+NCBITaxon:573,Klebsiella pneumoniae,ARO:3004271,16S rRNA methyltransferase (G1405),CARD,false,armA and rmt genes are distributed in Enterobacterales and often travel with NDM.
+NCBITaxon:562,Escherichia coli,ARO:3000059,KPC beta-lactamase,CARD,false,KPC is reported in E. coli but less often than in K. pneumoniae.
+NCBITaxon:562,Escherichia coli,ARO:3000057,NDM beta-lactamase,CARD|IDSA-AMR-GN-2024,false,NDM-5 is frequent in E. coli.
+NCBITaxon:562,Escherichia coli,ARO:3000021,VIM beta-lactamase,CARD,true,VIM is reported in E. coli but is uncommon; reviewer to confirm it belongs in scope.
+NCBITaxon:562,Escherichia coli,ARO:3007721,OXA-48-like beta-lactamase,CARD|IDSA-AMR-GN-2024,false,OXA-244 and OXA-181 occur in E. coli.
+NCBITaxon:562,Escherichia coli,ARO:3000016,CTX-M beta-lactamase (ESBL),CARD|IDSA-AMR-GN-2024,false,CTX-M-15 and CTX-M-14/27 are the main ESBLs in E. coli.
+NCBITaxon:562,Escherichia coli,ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),CARD,false,CMY-2 is the most common plasmid AmpC in E. coli (CARD lists several CMY alleles from E. coli).
+NCBITaxon:562,Escherichia coli,ARO:3004268,MCR phosphoethanolamine transferase,CARD,false,mcr-1 is best described in E. coli.
+NCBITaxon:562,Escherichia coli,ARO:3004271,16S rRNA methyltransferase (G1405),CARD,false,armA and rmtB occur in E. coli.
+NCBITaxon:470,Acinetobacter baumannii,ARO:3007710,OXA-23-like beta-lactamase,CARD|IDSA-AMR-GN-2024,false,Main acquired carbapenemase of carbapenem-resistant A. baumannii (CRAB).
+NCBITaxon:470,Acinetobacter baumannii,ARO:3000057,NDM beta-lactamase,CARD,true,NDM-1 is reported in A. baumannii but is much less common than OXA-23-like enzymes.
+NCBITaxon:470,Acinetobacter baumannii,ARO:3004271,16S rRNA methyltransferase (G1405),CARD,false,armA is widespread in A. baumannii.
+NCBITaxon:287,Pseudomonas aeruginosa,ARO:3000021,VIM beta-lactamase,CARD|IDSA-AMR-GN-2024,false,VIM-2 is the most common carbapenemase in P. aeruginosa; CARD describes VIM-1 as found in Pseudomonas spp.
+NCBITaxon:287,Pseudomonas aeruginosa,ARO:3000057,NDM beta-lactamase,CARD,true,NDM is reported in some P. aeruginosa lineages; reviewer to confirm relevance.
+NCBITaxon:287,Pseudomonas aeruginosa,ARO:3000059,KPC beta-lactamase,CARD,true,CARD lists P. aeruginosa among KPC-2 hosts; KPC-producing P. aeruginosa is regional (e.g. parts of South America).
+NCBITaxon:287,Pseudomonas aeruginosa,ARO:3000098,PDC beta-lactamase (chromosomal AmpC overproduction in P. aeruginosa),CARD|IDSA-AMR-GN-2024,false,PDC is chromosomal in all P. aeruginosa; the mechanism modelled is its derepression or overproduction.
+NCBITaxon:287,Pseudomonas aeruginosa,LOCAL:mech:oprd-porin-loss,OprD porin loss,IDSA-AMR-GN-2024,true,Loss of the OprD porin is the main route to imipenem resistance in P. aeruginosa without a carbapenemase.
+NCBITaxon:287,Pseudomonas aeruginosa,ARO:3004271,16S rRNA methyltransferase (G1405),unverified,true,rmt genes (for example rmtD) are reported in P. aeruginosa; not confirmed against CARD prevalence data.
+NCBITaxon:1280,Staphylococcus aureus,ARO:3009312,PBP2-like beta-lactam resistant transpeptidase (mecA / PBP2a),CARD|EUCAST-expert-rules,false,mecA encodes PBP2a and defines MRSA; the CARD family also contains mecC.

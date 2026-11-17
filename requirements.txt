@@ -1,0 +1,32 @@
+# AMR-Navigator dependencies (Python 3.11)
+# The project venv is created with --system-site-packages, so packages already
+# installed system-wide (torch, sentence-transformers, ...) are reused.
+
+# data and parsing
+pandas>=2.2
+openpyxl>=3.1
+pdfplumber>=0.11
+PyYAML>=6.0
+requests>=2.31
+
+# models and validation
+pydantic>=2.7
+
+# entity matching
+spacy>=3.7
+rapidfuzz>=3.9
+
+# retrieval
+rank-bm25>=0.2.2
+sentence-transformers>=3.0
+faiss-cpu>=1.9
+
+# graph database
+neo4j>=5.20
+
+# interface
+streamlit>=1.36
+pyvis>=0.3.2
+
+# tests
+pytest>=8.0

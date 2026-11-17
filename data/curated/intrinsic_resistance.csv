@@ -1,0 +1,57 @@
+pathogen_id,pathogen_name,class_id,class_name,source,needs_review,notes
+NCBITaxon:573,Klebsiella pneumoniae,aminopenicillin,Aminopenicillins,EUCAST-ERP-v1.2-2023,false,Chromosomal SHV-1/LEN-type beta-lactamase; EUCAST lists ampicillin and amoxicillin.
+NCBITaxon:573,Klebsiella pneumoniae,antistaphylococcal-penicillin,Antistaphylococcal (isoxazolyl) penicillins,EUCAST-ERP-v1.2-2023,true,EUCAST lists benzylpenicillin for Gram-negatives; extended here to isoxazolyl penicillins.
+NCBITaxon:573,Klebsiella pneumoniae,glycopeptide,Glycopeptides,EUCAST-ERP-v1.2-2023,false,Gram-negative outer membrane excludes glycopeptides.
+NCBITaxon:573,Klebsiella pneumoniae,lipoglycopeptide,Lipoglycopeptides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:573,Klebsiella pneumoniae,oxazolidinone,Oxazolidinones,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:573,Klebsiella pneumoniae,lipopeptide,Lipopeptides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:573,Klebsiella pneumoniae,lincosamide,Lincosamides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:573,Klebsiella pneumoniae,sulbactam-durlobactam,Sulbactam/durlobactam (Acinetobacter-targeted combination),unverified,true,Sulbactam-durlobactam is indicated only for Acinetobacter; sulbactam has little intrinsic activity against Enterobacterales.
+NCBITaxon:562,Escherichia coli,antistaphylococcal-penicillin,Antistaphylococcal (isoxazolyl) penicillins,EUCAST-ERP-v1.2-2023,true,EUCAST lists benzylpenicillin for Gram-negatives; extended here to isoxazolyl penicillins.
+NCBITaxon:562,Escherichia coli,glycopeptide,Glycopeptides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:562,Escherichia coli,lipoglycopeptide,Lipoglycopeptides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:562,Escherichia coli,oxazolidinone,Oxazolidinones,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:562,Escherichia coli,lipopeptide,Lipopeptides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:562,Escherichia coli,lincosamide,Lincosamides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:562,Escherichia coli,sulbactam-durlobactam,Sulbactam/durlobactam (Acinetobacter-targeted combination),unverified,true,Sulbactam-durlobactam is indicated only for Acinetobacter.
+NCBITaxon:470,Acinetobacter baumannii,aminopenicillin,Aminopenicillins,EUCAST-ERP-v1.2-2023,false,EUCAST lists ampicillin.
+NCBITaxon:470,Acinetobacter baumannii,aminopenicillin-bli,Aminopenicillin/clavulanate combinations,EUCAST-ERP-v1.2-2023,false,EUCAST lists amoxicillin-clavulanic acid; ampicillin-sulbactam is kept active because sulbactam acts on A. baumannii (EUCAST footnote).
+NCBITaxon:470,Acinetobacter baumannii,cephalosporin-1st-gen,First-generation cephalosporins,unverified,true,Chromosomal ADC (AmpC) and OXA-51-like enzymes.
+NCBITaxon:470,Acinetobacter baumannii,cephalosporin-2nd-gen,Second-generation cephalosporins,unverified,true,
+NCBITaxon:470,Acinetobacter baumannii,cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),unverified,true,EUCAST may list cefotaxime and ceftriaxone for A. baumannii; not confirmed. Ceftazidime and cefepime are not excluded.
+NCBITaxon:470,Acinetobacter baumannii,anti-mrsa-cephalosporin,Cephalosporins with anti-MRSA activity,unverified,true,Ceftaroline lacks useful activity against non-fermenters.
+NCBITaxon:470,Acinetobacter baumannii,monobactam,Monobactams,EUCAST-ERP-v1.2-2023,false,EUCAST lists aztreonam.
+NCBITaxon:470,Acinetobacter baumannii,monobactam-bli,Monobactam/beta-lactamase-inhibitor combinations,unverified,true,Extended from aztreonam: avibactam does not overcome intrinsic aztreonam resistance in A. baumannii.
+NCBITaxon:470,Acinetobacter baumannii,carbapenem-group-1,Carbapenems (non-antipseudomonal group 1),EUCAST-ERP-v1.2-2023,false,EUCAST lists ertapenem.
+NCBITaxon:470,Acinetobacter baumannii,phosphonic,Phosphonic acid derivatives,EUCAST-ERP-v1.2-2023,false,EUCAST lists fosfomycin.
+NCBITaxon:470,Acinetobacter baumannii,nitrofuran,Nitrofuran derivatives,unverified,true,
+NCBITaxon:470,Acinetobacter baumannii,antistaphylococcal-penicillin,Antistaphylococcal (isoxazolyl) penicillins,EUCAST-ERP-v1.2-2023,true,EUCAST lists benzylpenicillin for Gram-negatives; extended here to isoxazolyl penicillins.
+NCBITaxon:470,Acinetobacter baumannii,glycopeptide,Glycopeptides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:470,Acinetobacter baumannii,lipoglycopeptide,Lipoglycopeptides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:470,Acinetobacter baumannii,oxazolidinone,Oxazolidinones,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:470,Acinetobacter baumannii,lipopeptide,Lipopeptides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:470,Acinetobacter baumannii,lincosamide,Lincosamides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:287,Pseudomonas aeruginosa,aminopenicillin,Aminopenicillins,EUCAST-ERP-v1.2-2023,false,EUCAST lists ampicillin.
+NCBITaxon:287,Pseudomonas aeruginosa,aminopenicillin-bli,Aminopenicillin/clavulanate combinations,EUCAST-ERP-v1.2-2023,false,EUCAST lists amoxicillin-clavulanic acid.
+NCBITaxon:287,Pseudomonas aeruginosa,aminopenicillin-sulbactam,Aminopenicillin/sulbactam combinations,unverified,true,Ampicillin-sulbactam has no antipseudomonal activity; EUCAST listing not confirmed.
+NCBITaxon:287,Pseudomonas aeruginosa,sulbactam-durlobactam,Sulbactam/durlobactam (Acinetobacter-targeted combination),unverified,true,Sulbactam-durlobactam is indicated only for Acinetobacter.
+NCBITaxon:287,Pseudomonas aeruginosa,cephalosporin-1st-gen,First-generation cephalosporins,unverified,true,
+NCBITaxon:287,Pseudomonas aeruginosa,cephalosporin-2nd-gen,Second-generation cephalosporins,unverified,true,
+NCBITaxon:287,Pseudomonas aeruginosa,cephalosporin-3rd-gen,Third-generation cephalosporins (non-antipseudomonal),EUCAST-ERP-v1.2-2023,false,EUCAST lists cefotaxime and ceftriaxone; ceftazidime is in a separate class and stays active.
+NCBITaxon:287,Pseudomonas aeruginosa,anti-mrsa-cephalosporin,Cephalosporins with anti-MRSA activity,unverified,true,Ceftaroline has no antipseudomonal activity.
+NCBITaxon:287,Pseudomonas aeruginosa,carbapenem-group-1,Carbapenems (non-antipseudomonal group 1),EUCAST-ERP-v1.2-2023,false,EUCAST lists ertapenem.
+NCBITaxon:287,Pseudomonas aeruginosa,sulfonamide-trimethoprim,Sulfonamide-trimethoprim combinations,EUCAST-ERP-v1.2-2023,false,EUCAST lists trimethoprim-sulfamethoxazole.
+NCBITaxon:287,Pseudomonas aeruginosa,tetracycline,Tetracyclines,EUCAST-ERP-v1.2-2023,false,"EUCAST lists tetracycline; extended to doxycycline, minocycline and eravacycline."
+NCBITaxon:287,Pseudomonas aeruginosa,glycylcycline,Glycylcyclines,EUCAST-ERP-v1.2-2023,false,EUCAST lists tigecycline.
+NCBITaxon:287,Pseudomonas aeruginosa,nitrofuran,Nitrofuran derivatives,unverified,true,
+NCBITaxon:287,Pseudomonas aeruginosa,antistaphylococcal-penicillin,Antistaphylococcal (isoxazolyl) penicillins,EUCAST-ERP-v1.2-2023,true,EUCAST lists benzylpenicillin for Gram-negatives; extended here to isoxazolyl penicillins.
+NCBITaxon:287,Pseudomonas aeruginosa,glycopeptide,Glycopeptides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:287,Pseudomonas aeruginosa,lipoglycopeptide,Lipoglycopeptides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:287,Pseudomonas aeruginosa,oxazolidinone,Oxazolidinones,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:287,Pseudomonas aeruginosa,lipopeptide,Lipopeptides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:287,Pseudomonas aeruginosa,lincosamide,Lincosamides,EUCAST-ERP-v1.2-2023,false,
+NCBITaxon:1280,Staphylococcus aureus,monobactam,Monobactams,EUCAST-ERP-v1.2-2023,false,EUCAST lists aztreonam for S. aureus.
+NCBITaxon:1280,Staphylococcus aureus,monobactam-bli,Monobactam/beta-lactamase-inhibitor combinations,unverified,true,Extended from aztreonam: aztreonam-avibactam has no Gram-positive activity.
+NCBITaxon:1280,Staphylococcus aureus,polymyxin,Polymyxins,EUCAST-ERP-v1.2-2023,false,EUCAST lists colistin and polymyxin B for S. aureus.
+NCBITaxon:1280,Staphylococcus aureus,siderophore-cephalosporin,Siderophore cephalosporins,unverified,true,Cefiderocol is a Gram-negative agent with no useful anti-staphylococcal activity.
+NCBITaxon:1280,Staphylococcus aureus,sulbactam-durlobactam,Sulbactam/durlobactam (Acinetobacter-targeted combination),unverified,true,Sulbactam-durlobactam is indicated only for Acinetobacter.

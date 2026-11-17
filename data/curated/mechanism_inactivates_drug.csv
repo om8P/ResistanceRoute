@@ -1,0 +1,37 @@
+mechanism_id,mechanism_name,drug_id,drug_name,source,needs_review,notes
+ARO:3000059,KPC beta-lactamase,J01CR02,amoxicillin-clavulanic acid,CARD|IDSA-AMR-GN-2024,false,Clavulanate does not protect amoxicillin from KPC.
+ARO:3000059,KPC beta-lactamase,J01CR01,ampicillin-sulbactam,CARD|IDSA-AMR-GN-2024,false,Sulbactam does not protect ampicillin from KPC.
+ARO:3000059,KPC beta-lactamase,J01CR05,piperacillin-tazobactam,CARD|IDSA-AMR-GN-2024,false,Tazobactam does not protect piperacillin from KPC.
+ARO:3000059,KPC beta-lactamase,J01DI54,ceftolozane-tazobactam,IDSA-AMR-GN-2024,false,Tazobactam does not inhibit KPC; ceftolozane-tazobactam is not active against carbapenemase producers.
+ARO:3000057,NDM beta-lactamase,J01CR02,amoxicillin-clavulanic acid,CARD,false,Serine-enzyme inhibitors do not inhibit metallo-beta-lactamases.
+ARO:3000057,NDM beta-lactamase,J01CR01,ampicillin-sulbactam,CARD,false,Serine-enzyme inhibitors do not inhibit metallo-beta-lactamases.
+ARO:3000057,NDM beta-lactamase,J01CR05,piperacillin-tazobactam,CARD,false,Serine-enzyme inhibitors do not inhibit metallo-beta-lactamases.
+ARO:3000057,NDM beta-lactamase,J01DD52,ceftazidime-avibactam,IDSA-AMR-GN-2024,false,Avibactam does not inhibit metallo-beta-lactamases. This is the example in ARCHITECTURE.md 5.2.
+ARO:3000057,NDM beta-lactamase,J01DI54,ceftolozane-tazobactam,IDSA-AMR-GN-2024,false,Tazobactam does not inhibit metallo-beta-lactamases.
+ARO:3000057,NDM beta-lactamase,J01DH52,meropenem-vaborbactam,IDSA-AMR-GN-2024,false,Vaborbactam does not inhibit metallo-beta-lactamases.
+ARO:3000057,NDM beta-lactamase,J01DH56,imipenem-cilastatin-relebactam,IDSA-AMR-GN-2024,false,Relebactam does not inhibit metallo-beta-lactamases.
+ARO:3000057,NDM beta-lactamase,J01CG30,sulbactam-durlobactam,unverified,true,Durlobactam does not inhibit metallo-beta-lactamases; relevant to rare NDM-producing A. baumannii.
+ARO:3000021,VIM beta-lactamase,J01CR02,amoxicillin-clavulanic acid,CARD,false,Serine-enzyme inhibitors do not inhibit metallo-beta-lactamases.
+ARO:3000021,VIM beta-lactamase,J01CR01,ampicillin-sulbactam,CARD,false,Serine-enzyme inhibitors do not inhibit metallo-beta-lactamases.
+ARO:3000021,VIM beta-lactamase,J01CR05,piperacillin-tazobactam,CARD,false,Serine-enzyme inhibitors do not inhibit metallo-beta-lactamases.
+ARO:3000021,VIM beta-lactamase,J01DD52,ceftazidime-avibactam,IDSA-AMR-GN-2024,false,Avibactam does not inhibit metallo-beta-lactamases.
+ARO:3000021,VIM beta-lactamase,J01DI54,ceftolozane-tazobactam,IDSA-AMR-GN-2024,false,Tazobactam does not inhibit metallo-beta-lactamases.
+ARO:3000021,VIM beta-lactamase,J01DH52,meropenem-vaborbactam,IDSA-AMR-GN-2024,false,Vaborbactam does not inhibit metallo-beta-lactamases.
+ARO:3000021,VIM beta-lactamase,J01DH56,imipenem-cilastatin-relebactam,IDSA-AMR-GN-2024,false,Relebactam does not inhibit metallo-beta-lactamases.
+ARO:3007721,OXA-48-like beta-lactamase,J01CR02,amoxicillin-clavulanic acid,CARD,false,OXA-48-like enzymes hydrolyse penicillins and are poorly inhibited by clavulanate.
+ARO:3007721,OXA-48-like beta-lactamase,J01CR01,ampicillin-sulbactam,CARD,false,OXA-48-like enzymes hydrolyse penicillins and are poorly inhibited by sulbactam.
+ARO:3007721,OXA-48-like beta-lactamase,J01CR05,piperacillin-tazobactam,CARD,false,OXA-48-like enzymes hydrolyse penicillins and are poorly inhibited by tazobactam.
+ARO:3007721,OXA-48-like beta-lactamase,J01DI54,ceftolozane-tazobactam,IDSA-AMR-GN-2024,false,Tazobactam does not inhibit OXA-48-like enzymes.
+ARO:3007721,OXA-48-like beta-lactamase,J01DH52,meropenem-vaborbactam,IDSA-AMR-GN-2024,false,Vaborbactam has no useful activity against class D enzymes.
+ARO:3007721,OXA-48-like beta-lactamase,J01DH56,imipenem-cilastatin-relebactam,IDSA-AMR-GN-2024,false,Relebactam has no useful activity against class D enzymes.
+ARO:3007710,OXA-23-like beta-lactamase,J01CR05,piperacillin-tazobactam,unverified,true,OXA-23 hydrolyses penicillins and is not inhibited by tazobactam.
+ARO:3007710,OXA-23-like beta-lactamase,J01DD52,ceftazidime-avibactam,IDSA-AMR-GN-2024,true,Avibactam inhibits OXA-23-like enzymes poorly; ceftazidime-avibactam is not a CRAB option.
+ARO:3007710,OXA-23-like beta-lactamase,J01DI54,ceftolozane-tazobactam,IDSA-AMR-GN-2024,true,Not a CRAB option; tazobactam does not inhibit OXA-23-like enzymes.
+ARO:3007710,OXA-23-like beta-lactamase,J01DH52,meropenem-vaborbactam,IDSA-AMR-GN-2024,false,Vaborbactam has no useful activity against class D enzymes.
+ARO:3007710,OXA-23-like beta-lactamase,J01DH56,imipenem-cilastatin-relebactam,IDSA-AMR-GN-2024,false,Relebactam has no useful activity against class D enzymes.
+ARO:3000016,CTX-M beta-lactamase (ESBL),J01CR05,piperacillin-tazobactam,IDSA-AMR-GN-2024,true,"Not strict inactivation: isolates often test susceptible in vitro. Modelled as excluded because IDSA advises against piperacillin-tazobactam for ESBL-E infections outside uncomplicated cystitis (MERINO trial)."
+ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),J01CR02,amoxicillin-clavulanic acid,CARD,false,Clavulanate does not inhibit AmpC enzymes.
+ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),J01CR01,ampicillin-sulbactam,unverified,true,Sulbactam is a weak AmpC inhibitor.
+ARO:3000069,CMY beta-lactamase (plasmid-mediated AmpC),J01CR05,piperacillin-tazobactam,IDSA-AMR-GN-2024,true,Tazobactam is a weak AmpC inhibitor; IDSA does not favour piperacillin-tazobactam for serious AmpC-E infections.
+ARO:3000098,PDC beta-lactamase (chromosomal AmpC overproduction in P. aeruginosa),J01CR05,piperacillin-tazobactam,IDSA-AMR-GN-2024,true,Derepressed PDC confers piperacillin-tazobactam resistance; ceftolozane-tazobactam and ceftazidime-avibactam are kept as active.
+LOCAL:mech:oprd-porin-loss,OprD porin loss,J01DH51,imipenem-cilastatin,unverified,true,Imipenem enters through OprD; meropenem is less affected and is not excluded. Imipenem-relebactam is kept as active.

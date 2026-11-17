@@ -1,0 +1,16 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# downloaded sources: fetched by pipeline/download.py, not committed (see DECISIONS.md D19)
+data/raw/*
+!data/raw/.gitkeep
+
+# derived files: rebuilt by the pipeline
+data/processed/*
+!data/processed/.gitkeep
+*.faiss
+eval/results/*
+!eval/results/.gitkeep

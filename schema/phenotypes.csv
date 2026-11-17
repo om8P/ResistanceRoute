@@ -1,0 +1,15 @@
+acronym,pathogen_id,mechanism_ids,class_family,notes
+MRSA,NCBITaxon:1280,ARO:3009312,,"mecA/PBP2a; the mechanism's class edges exclude all beta-lactams except ceftaroline, so no class_family is given (the cephalosporin family would wrongly exclude ceftaroline)."
+MSSA,NCBITaxon:1280,,,Methicillin-susceptible: implies absence of mecA. No mechanism or resistant family.
+CRKP,NCBITaxon:573,,carbapenem,Carbapenem-resistant K. pneumoniae; mechanism unknown. Answer per carbapenemase recorded for the pathogen (KPC|NDM|VIM|OXA-48-like).
+KPC-Kp,NCBITaxon:573,ARO:3000059,carbapenem,KPC-producing K. pneumoniae.
+CREC,NCBITaxon:562,,carbapenem,Carbapenem-resistant E. coli; mechanism unknown.
+CRE,NCBITaxon:573,,carbapenem,"Carbapenem-resistant Enterobacterales; one row per in-scope Enterobacterales species (also E. coli). Mechanism unknown."
+CRE,NCBITaxon:562,,carbapenem,"Carbapenem-resistant Enterobacterales; one row per in-scope Enterobacterales species (also K. pneumoniae). Mechanism unknown."
+ESBL-E,NCBITaxon:573,ARO:3000016,,"ESBL-producing Enterobacterales; one row per species. CTX-M stands for all ESBLs. No class_family: the cephalosporin family would wrongly exclude cefiderocol, which ESBLs do not defeat."
+ESBL-E,NCBITaxon:562,ARO:3000016,,"ESBL-producing Enterobacterales; one row per species. CTX-M stands for all ESBLs."
+ESBL-EC,NCBITaxon:562,ARO:3000016,,ESBL-producing E. coli.
+ESBL-KP,NCBITaxon:573,ARO:3000016,,ESBL-producing K. pneumoniae.
+CRAB,NCBITaxon:470,,carbapenem,Carbapenem-resistant A. baumannii; usually OXA-23-like (ARO:3007710) but not implied. Answer per recorded mechanism.
+CRPA,NCBITaxon:287,,carbapenem,"Carbapenem-resistant P. aeruginosa; carbapenemase (VIM, KPC, NDM) or OprD loss with or without PDC overproduction."
+DTR-PA,NCBITaxon:287,,,"IDSA difficult-to-treat resistance: not susceptible to all first-line beta-lactams (piperacillin-tazobactam, ceftazidime, cefepime, aztreonam, meropenem, imipenem) and fluoroquinolones. Spans several families, so class_family is empty."
