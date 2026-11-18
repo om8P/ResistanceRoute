@@ -103,9 +103,14 @@ All four files end with the columns `source,needs_review,notes`.
 
 ### `data/curated/recommendations_curated.csv` (wave 2)
 
-`rec_id,guideline_id,pathogen_id,mechanism_id,drug_ids,infection_site,line_of_therapy,patient_group,text,source_section,source_page`
+`rec_id,guideline_id,pathogen_id,mechanism_id,drug_ids,regimen_type,base_drug_ids,susceptible_only,infection_site,line_of_therapy,patient_group,text,caveat,source_section,source_page`
 
-- `mechanism_id` is empty when the guideline does not name a mechanism.
+- `base_drug_ids`: `|`-separated base drugs of a base-plus-partner regimen, or empty (D40).
+- `susceptible_only`: `true` when the recommendation applies only to susceptible organisms, else `false` (D40).
+- `caveat`: the sentence an answer must show with this recommendation, or empty (D34, D40).
+
+- `mechanism_id` is empty when the guideline does not name a mechanism, and may hold several `|`-separated IDs for co-producing mechanisms (D33).
+- `regimen_type`: `single` (one drug), `combination` (all drugs together), `any-of` (alternatives, judged one by one). Stored on the `Recommendation` node.
 - `drug_ids` is `|`-separated.
 - `line_of_therapy`: `first`, `second`, `alternative`, `last-resort`.
 - `text` is a short paraphrase of the recommendation, not a long quotation.
@@ -122,9 +127,9 @@ All under `data/processed/`.
 |---|---|
 | `nodes_<Label>.csv` | `id` plus that label's properties, as in ARCHITECTURE.md section 5.1 |
 | `edges_<TYPE>.csv` | `start_id,start_label,end_id,end_label,source_id,method,confidence,evidence_passage_id` plus any extra properties |
-| `passages.jsonl` | `{"id", "text", "source_doc", "section", "page", "n_words"}` |
-| `mentions.jsonl` | `{"passage_id", "start", "end", "surface", "entity_type"}` |
-| `mentions_linked.jsonl` | the mention fields plus `{"entity_id", "match_type", "score"}` |
+| `passages.jsonl` | `{"id", "text", "source_doc", "section", "page", "n_words", "printed_page", "is_table", "heading"}`; `page` and `printed_page` are null for abstracts; `text` includes a 30-word overlap with the previous passage |
+| `mentions.jsonl` | `{"passage_id", "start", "end", "surface", "entity_type"}`, including candidates that were not linked |
+| `mentions_linked.jsonl` | the mention fields plus `{"entity_id", "match_type", "score"}`, and optionally `canonical_name` and phenotype keys. `score` is 1.0 exact, 0.97 normalised, 0.93 phenotype, at most 0.95 fuzzy |
 | `unlinked.csv` | `surface,entity_type,count,example_passage_id` |
 | `recommendations_extracted.jsonl` | one `RecommendationExtraction` object per line |
 | `load_report.json` | counts of nodes and edges loaded and rejected, with reasons |
@@ -136,6 +141,7 @@ Edge provenance values:
 - `method`: `curated`, `rule` or `llm`.
 - `confidence`: a number from 0 to 1; `1.0` for curated edges.
 - `evidence_passage_id`: a `Passage` id, or empty.
+- `evidence_sources`: optional, `|`-separated reference tags from the curated files' `source` column (D36).
 
 ## 7. Module interfaces
 
@@ -148,7 +154,7 @@ Edge provenance values:
 | `pipeline/download.py` | T02 | CLI `python -m pipeline.download [--only <sources>] [--force]` |
 | `eval/metrics.py` | T04 | `precision_at_k`, `recall_at_k`, `reciprocal_rank`, `average_precision`, `ndcg_at_k`, `set_prf`, `accuracy`, `aggregate` |
 | `pipeline/link.py` | T07 | `EntityLinker.link(text) -> list[LinkedMention]`, `EntityLinker.resolve(surface, entity_type=None) -> LinkedEntity or None` |
-| `retrieval/` | T10–T14 | `answer(question, mode) -> dict` with keys `intent`, `entities`, `answers`, `path`, `passages`, `mode`; `mode` is one of `bm25`, `dense`, `bm25_dense`, `graph`, `hybrid` |
+| `retrieval/` | T10–T14 | `answer(question, mode="hybrid", k=10) -> dict` (in `retrieval/answer.py`) with keys `question`, `mode`, `intent`, `entities`, `answers`, `other_active`, `paths`, `passages`, `answer_text`, `declined`, `decline_reason`, `disclaimer`, plus `cypher`, `empty_reason`, `note`, `timing_s`; `mode` is one of `bm25`, `dense`, `bm25_dense`, `graph`, `hybrid`. In `alternatives` answers the same drug appears once per mechanism group, so de-duplicate by `id` before scoring (D44). CLI `python -m retrieval.answer "<question>" --mode hybrid` |
 
 ### Validation and loading behaviour (`pipeline/validate.py`, `pipeline/graph_db.py`)
 
@@ -165,6 +171,51 @@ Edge provenance values:
 - A ranked list is de-duplicated before ranks are assigned: `["a", "a", "b"]` is scored as `["a", "b"]`. Retrieval code should still return each ID once.
 - `ndcg_at_k` accepts a mapping of ID to grade, or a collection of IDs treated as grade 1. Negative grades raise `ValueError`.
 - `aggregate` requires every per-query dict to have the same metric names, and raises `ValueError` otherwise.
+
+### Retrieval interfaces (wave 3)
+
+All three modules return plain dataclasses defined in `retrieval/types.py` (owned by T12, which writes it first; T10 and T11 import from it and may ask for fields in their handoffs).
+
+**`retrieval/parser.py` (T12)**: `parse(question: str) -> ParsedQuery`
+
+| Field | Type | Meaning |
+|---|---|---|
+| `question` | `str` | The input |
+| `intent` | `str` | `alternatives`, `why_restricted`, `mechanism_lookup`, `recommendation_lookup`, `drug_profile`, `surveillance`, `decline`, or `unknown` |
+| `pathogen_ids`, `mechanism_ids`, `drug_ids`, `class_ids` | `list[str]` | Canonical IDs found or implied (phenotype acronyms add their mechanisms) |
+| `class_families` | `list[str]` | Families named in the question, such as `carbapenem` |
+| `country` | `str or None` | ISO 3 code, for surveillance |
+| `year` | `int or None` | For surveillance |
+| `infection_site` | `str or None` | Free text if the question names one |
+| `decline_reason` | `str or None` | Set when `intent` is `decline` |
+| `mentions` | `list` | The `LinkedMention` objects from the linker |
+
+**`retrieval/graph_search.py` (T10)**: `graph_search(parsed: ParsedQuery) -> GraphResult`
+
+| Field | Type | Meaning |
+|---|---|---|
+| `answers` | `list[Answer]` | Each `Answer` has `id`, `label`, `name`, `group` (for example the mechanism name, or empty), `aware_group`, `recommendation_ids`, `caveats` (list of strings), `score` |
+| `paths` | `list[Path]` | Each `Path` is an ordered list of steps `{node_id, node_label, node_name, rel_type, rel_props}` from the question's entities to one answer, with the relationship's provenance in `rel_props` |
+| `entity_ids` | `list[str]` | Every node ID on any path, for graph-linked passage retrieval |
+| `cypher` | `list[str]` | The queries run, for display |
+| `empty_reason` | `str or None` | Why there is no answer, when there is none |
+
+**`retrieval/text_search.py` (T11)**: `search(query: str, mode: str, k: int = 10, entity_ids: list[str] | None = None) -> list[PassageHit]`
+
+- `mode` is `bm25`, `dense` or `bm25_dense` (reciprocal rank fusion of the two, k = 60).
+- `entity_ids`, when given, restricts results to passages that mention at least one of those entities.
+- `PassageHit` has `passage_id`, `score`, `rank`, `text`, `source_doc`, `section`, `page`.
+- `passages_for_entities(entity_ids: list[str], k: int) -> list[PassageHit]` returns passages linked to the entities through `MENTIONS` or `SUPPORTS`, most-connected first.
+
+**Behaviour notes recorded after wave 3**
+
+- `Path` keeps its steps in `Path.steps` and names its answer in `Path.answer_id`. Each step also has `direction` (`out` or `in`) and `from_node_id`, because a guideline step attaches to the recommendation rather than to the previous drug. Derived steps (`rel_type` `NOT_EXCLUDED`, or a `HAS_MECHANISM` the question asserts) have `rel_props.method` `derived`.
+- `ParsedQuery.mentions` may include mentions with `match_type` `uppercase` (D37). Ambiguous phenotypes are narrowed to the species the question names.
+- `graph_search` and `parse` take optional `driver` and `linker` arguments for tests.
+- `bm25` may return fewer than `k` hits. The `passages_for_entities` score is the number of distinct matching entities.
+- The index in `data/processed/index/` is generated and not committed. Rebuild it with `python -m retrieval.build_index` whenever `passages.jsonl` changes; loading raises if it is stale.
+- `recommendations_extracted.jsonl` holds canonical names, not IDs, for pathogen, mechanisms (`|`-joined) and drugs.
+- Intent `unknown` uses text retrieval only; intent `decline` shows `decline_reason` and runs no retrieval.
 
 ## 8. Graph schema
 

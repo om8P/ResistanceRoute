@@ -39,6 +39,19 @@ Status values: **Accepted** (build to this), **Open** (needs an answer; the stat
 | D29 | Fine-grained reasoning classes grouped into families | Accepted |
 | D30 | GLASS genus-level Acinetobacter linked to A. baumannii with a note | Accepted |
 | D31 | ICMR sources are the 2019 guidelines and the 2022 carbapenem-resistance guidance | Accepted |
+| D32 | Recommendations become graph nodes in the core build | Accepted |
+| D33 | Regimen type and co-producing mechanisms on recommendations | Accepted |
+| D34 | Mechanism-specific recommendations outrank drug-level exclusions | Accepted |
+| D35 | MRSA surveillance uses the GLASS methicillin row | Accepted |
+| D36 | Curated evidence tags are kept on edges | Accepted |
+| D37 | Lower-case acronyms in questions | Accepted |
+| D38 | Effort per worker, adjustable mid-session, capped at high | Accepted |
+| D39 | Answers separate guideline-recommended drugs from drugs merely not excluded | Accepted |
+| D40 | Caveats, base drugs and susceptible-only flags live in the curated data | Accepted |
+| D41 | T10's reasoning refinements | Accepted |
+| D42 | The extraction score is reported as measured | Accepted |
+| D43 | Q38 and Q33 gold answers stay as written | Accepted |
+| D44 | Scoring rules for the evaluation runner | Accepted |
 | Q1, Q4, Q5 | Open questions | Open |
 
 ## Scope and data
@@ -214,6 +227,74 @@ These were decided by the orchestrator session on 2026-11-17, when implementatio
 ### D31. ICMR sources are the 2019 guidelines and the 2022 carbapenem-resistance guidance
 - **Decision:** Use the ICMR 2019 treatment guidelines PDF and the ICMR 2022 guidance on carbapenem-resistant Gram-negative infections. Do not scrape the 2022 web edition.
 - **Why:** The 2022 treatment guidelines exist only as a web app. The 2022 carbapenem-resistance guidance has a per-mechanism table, which is exactly what the reasoning needs.
+
+## Wave 2 review decisions (2026-11-18)
+
+### D32. Recommendations become graph nodes in the core build
+- **Decision:** `pipeline/build_core.py` turns `data/curated/recommendations_curated.csv` into `Recommendation` nodes with `FOR_PATHOGEN`, `FOR_MECHANISM`, `RECOMMENDS` and `FROM` edges, and links `SUPPORTS` edges from the passages of the same document whose page range covers the row's `source_page`.
+- **Why:** No task had been given this step, and the reasoning queries (T10) need recommendations in the graph.
+
+### D33. Regimen type and co-producing mechanisms on recommendations
+- **Decision:** `recommendations_curated.csv` gets a `regimen_type` column (`single`, `combination`, `any-of`), stored on the `Recommendation` node. `mechanism_id` may hold several `|`-separated IDs for co-producers (for example NDM + OXA-48), giving one `FOR_MECHANISM` edge each.
+- **Why:** `drug_ids` mixed combination partners and lists of alternatives, which need opposite logic: a combination is one unit, while alternatives are judged one by one.
+
+### D34. Mechanism-specific recommendations outrank drug-level exclusions
+- **Decision:** For a mechanism `m`, a recommendation linked to `m` by `FOR_MECHANISM` is always returned, even when one of its drugs is excluded for `m`. The answer then shows the caveat (for example "carbapenem only in combination when the MIC is low", or "aztreonam is active only because avibactam protects it"). Recommendations not tied to a mechanism are filtered by the exclusion rule: an `any-of` row is judged drug by drug, and a `combination` or `single` row is dropped if any of its drugs is excluded.
+- **Why:** T08 found 11 rows where a guideline deliberately recommends a regimen built around a drug the mechanism defeats on its own (ceftazidime-avibactam plus aztreonam for NDM; carbapenem partners in combination therapy). The guideline's specific advice is better evidence than the general rule, and hiding it would make answers wrong.
+- **Rejected:** Changing T03's resistance facts to remove the conflicts, which would make the single-drug reasoning wrong.
+
+### D35. MRSA surveillance uses the GLASS methicillin row
+- **Decision:** GLASS `Methicillin` maps to the class `antistaphylococcal-penicillin` and stands for MRSA. GLASS `Oxacillin` is left unmapped: oxacillin is not in scope, and the methicillin row already covers MRSA.
+- **Why:** The methicillin row is the one GLASS uses for its MRSA indicator, which also underlies SDG indicator 3.d.2.
+
+### D36. Curated evidence tags are kept on edges
+- **Decision:** Edges built from the curated files carry the row's `source` column as `evidence_sources` (a `|`-separated list).
+- **Why:** Explanations should show which references support each step, not only free-text notes.
+
+### D37. Lower-case acronyms in questions
+- **Decision:** The linker stays case-sensitive for abbreviations in documents. The query parser (T12) additionally tries an upper-cased lookup for question tokens of 3 or more letters that match no other entity, so `mrsa` and `cza` resolve in questions.
+- **Why:** Users type in lower case; guideline text does not, and case-sensitivity there avoids false links.
+
+### D38. Effort per worker, adjustable mid-session, capped at high
+- **Decision:** Each worker session gets a reasoning effort of `low`, `medium` or `high` chosen for its task (levels and criteria in [ORCHESTRATION.md](ORCHESTRATION.md)), never `xhigh` or `max`. The orchestrator changes a running worker's effort when the work in front of it gets harder or simpler.
+- **Why:** Requested by the user. Matching effort to the task spends the shared usage limit where errors are costly (clinical content, reasoning queries) and saves it on mechanical work.
+
+## Wave 3 review decisions (2026-11-18)
+
+### D39. Answers separate guideline-recommended drugs from drugs merely not excluded
+- **Decision:** An `alternatives` answer leads with drugs that have at least one supporting recommendation (`Answer.recommendation_ids` not empty), grouped by mechanism and ordered by line of therapy. Drugs that the resistance data does not exclude but no guideline recommends are shown afterwards, as a separate, clearly labelled list.
+- **Why:** The first end-to-end run returned up to 29 drugs per mechanism, including nitrofurantoin, because every non-excluded drug counted as an answer. The question asks which guideline-listed alternatives remain; "not excluded" is weaker evidence and must not look the same.
+- **Consequence:** T17 scores `drug_set` answers against the guideline-recommended list unless a question's gold answer comes from the curated resistance facts.
+
+### D40. Caveats, base drugs and susceptible-only flags live in the curated data
+- **Decision:** `recommendations_curated.csv` gets three columns: `caveat` (the D34 text, or empty), `base_drug_ids` (for regimens of one base drug plus partners, or empty) and `susceptible_only` (`true` when the recommendation is for susceptible organisms only). Graph search reads them instead of parsing `RECOMMENDATION_NOTES.md`.
+- **Why:** T10 had to parse a Markdown table and depend on the order of a CSV cell. Data that the reasoning depends on belongs in a validated data file.
+
+### D41. T10's reasoning refinements
+- **Decision:** Accept the rules T10 introduced: base-plus-partner regimens are judged on the base drug and at least one active partner; when the question reports resistance to a class, that class is excluded even if no mechanism in the graph confers it; co-production caveats are generated from the data. Recommendations with `susceptible_only` are dropped from answers about resistant organisms.
+- **Why:** Each removes a misleading answer that T10 found in testing.
+
+### D42. The extraction score is reported as measured
+- **Decision:** The rule-based extraction experiment (T13) is reported with strict F1 as the headline (0.13 overall, 0.37 on ICMR 2022, 0.00 on the ICMR 2019 development set) and lenient F1 beside it. ICMR 2019 tables are not re-extracted.
+- **Why:** The low score is a real finding: guideline recommendations are too table-bound and context-dependent for simple rules, which supports curating the core recommendations by hand (D9). Re-extracting tables would cost a wave for an experiment that is not on the critical path.
+
+### Other rulings
+- Abstract passages have `page` and `printed_page` set to null. Passage text is indexed with its 30-word overlap.
+- MRSA rows use mecA and ESBL rows use CTX-M as `mechanism_id` (T08), following `schema/phenotypes.csv`.
+- Cefoperazone-sulbactam and standalone sulbactam stay out of scope for now; they are listed as future additions.
+- `eval/questions.json` may cite several sources per answer (`gold_source` is a list), including the form `who-aware-2025 sheet '<sheet>' row <n>`.
+
+## Wave 4 review decisions (2026-11-18)
+
+### D43. Q38 and Q33 gold answers stay as written
+- **Decision:** Q38 keeps MCR as its only gold mechanism, and Q33 keeps ampicillin-sulbactam as its only gold drug. T15's findings are recorded as known limits in the report.
+- **Why:** For Q38, chromosomal *mgrB* and *pmrAB* changes are the more common cause in *K. pneumoniae*, but they are not mechanisms in the graph or the synonym dictionary, so no retrieval mode can return them as an answer and none is penalised unfairly. For Q33, cefoperazone-sulbactam and standalone sulbactam are out of scope (wave 3 "Other rulings").
+- **Consequence:** The report's limitations section names *mgrB* as a missing mechanism, and adding it is listed as future work.
+
+### D44. Scoring rules for the evaluation runner
+- **Decision:** T17 scores passages against `eval/qrels.json` with graded nDCG@k (grades 2 and 1). Recall@k and MRR count grade ≥ 1 as relevant (the headline), and are also reported at grade = 2. The seven answerable questions with no grade-2 passage are left out of the grade-2 figures, and the report says so. Answer lists are de-duplicated by `id` before scoring, and `drug_set` answers are scored against `answers` (guideline-recommended), not `other_active` (D39). The dense model is warmed with one call before anything is timed.
+- **Why:** T15 found seven answerable questions with only grade-1 passages, so a grade-2-only threshold would give them nothing to find. T14 returns the same drug once per mechanism group.
+- **Consequence:** The pool's single `manual` passage (Q23) stays in the qrels; it is a real relevant passage that no automatic method found.
 
 ### Q2 (resolved). LLM for extraction
 - **Decision:** Rule-based extraction is the default path. LLM extraction with structured output remains a stretch goal and is not needed for any milestone.

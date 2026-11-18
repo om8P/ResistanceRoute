@@ -1,0 +1,1006 @@
+[
+  {
+    "id": "Q01",
+    "question": "What class and AWaRe group is meropenem?",
+    "intent": "drug_profile",
+    "hops": "single",
+    "entities": [
+      "J01DH02"
+    ],
+    "answer_type": "fact",
+    "gold": "Meropenem is a carbapenem (reasoning class carbapenem, the antipseudomonal group) in the AWaRe Watch group.",
+    "gold_keywords": [
+      "carbapenem",
+      "watch"
+    ],
+    "gold_source": [
+      "who-aware-2025 sheet 'AWaRe classification 2025' row 142",
+      "curated-seed schema/scope.yaml line 225"
+    ],
+    "notes": "Both parts are needed for a correct answer: class and group."
+  },
+  {
+    "id": "Q02",
+    "question": "KPC-producing Klebsiella pneumoniae resistant to carbapenems: which beta-lactam antibiotics are still active?",
+    "intent": "alternatives",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:573",
+      "ARO:3000059",
+      "carbapenem"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01DD52",
+      "J01DH52",
+      "J01DH56",
+      "J01DI04",
+      "J01DF51"
+    ],
+    "gold_source": [
+      "who-aware-book-2022 p596",
+      "icmr-cr-gram-negative-2022 p17",
+      "curated-seed data/curated/mechanism_class.csv lines 2-11",
+      "curated-seed data/curated/mechanism_inactivates_drug.csv lines 2-5"
+    ],
+    "notes": "Mechanism pair with Q03 (only the mechanism differs). AWaRe Table 41.1 (p596) marks cefiderocol, ceftazidime-avibactam and meropenem-vaborbactam active against KPC; ICMR Table 4 (p17) gives ceftazidime-avibactam as first choice. Imipenem-relebactam and aztreonam-avibactam are not in the 2022 book; their activity comes from the curated seed (KPC has no inactivation row for them). KPC defeats all plain cephalosporins, carbapenems and aztreonam, and the older penicillin/inhibitor combinations and ceftolozane-tazobactam."
+  },
+  {
+    "id": "Q03",
+    "question": "NDM-producing Klebsiella pneumoniae resistant to carbapenems: which beta-lactam antibiotics are still active?",
+    "intent": "alternatives",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:573",
+      "ARO:3000057",
+      "carbapenem"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01DI04",
+      "J01DF51"
+    ],
+    "gold_source": [
+      "who-aware-book-2022 p596",
+      "who-aware-book-2022 p600",
+      "icmr-cr-gram-negative-2022 p16",
+      "curated-seed data/curated/mechanism_class.csv lines 12-20",
+      "curated-seed data/curated/mechanism_inactivates_drug.csv lines 6-12"
+    ],
+    "notes": "Mechanism pair with Q02. Stricter answer chosen: plain aztreonam (J01DF01) is NOT in the gold. NDM itself does not hydrolyse aztreonam (curated seed has no NDM monobactam edge, mechanism_class.csv line 20), but NDM producers usually co-produce ESBL/AmpC, and ICMR Table 4 (p16) only uses aztreonam together with ceftazidime-avibactam. An answer giving 'ceftazidime-avibactam plus aztreonam' as a combination is acceptable; ceftazidime-avibactam alone is inactive (Table 41.1 p596, p605). Meropenem-vaborbactam and imipenem-relebactam are inactive against MBLs."
+  },
+  {
+    "id": "Q04",
+    "question": "what % of klebsiella pneumoniae blood isolates were meropenem resistant in india in 2022?",
+    "intent": "surveillance",
+    "hops": "single",
+    "entities": [
+      "NCBITaxon:573",
+      "J01DH02"
+    ],
+    "answer_type": "number",
+    "gold": {
+      "value": 61.1,
+      "unit": "percent resistant",
+      "year": 2022,
+      "country": "IND"
+    },
+    "gold_source": [
+      "glass PERCENTAGERESISTANCE|2022|IND|BLOOD|Klebsiella pneumoniae|Meropenem|Carbapenem resistance (file line 41347)",
+      "glass PERCENTAGERESISTANCE|2022|IND|BLOOD|Klebsiella pneumoniae|Meropenem|(blank group) (file line 164946)"
+    ],
+    "notes": "Exact value 61.088309281. Accept 61 to 61.1. The two GLASS rows (with and without group) agree. SurveillanceStat id GLASS:IND:2022:NCBITaxon:573:J01DH02."
+  },
+  {
+    "id": "Q05",
+    "question": "Why is colistin restricted?",
+    "intent": "why_restricted",
+    "hops": "single",
+    "entities": [
+      "J01XB01"
+    ],
+    "answer_type": "fact",
+    "gold": "Colistin is a Reserve (last-resort) antibiotic: it is kept for confirmed or strongly suspected multidrug- or carbapenem-resistant Gram-negative infections so that its activity is preserved, and it causes kidney damage (more often than polymyxin B) and, more rarely, neurotoxicity.",
+    "gold_keywords": [
+      "reserve"
+    ],
+    "gold_keywords_any": [
+      [
+        "kidney",
+        "nephrotox",
+        "renal"
+      ]
+    ],
+    "gold_source": [
+      "who-aware-2025 sheet 'AWaRe classification 2025' row 89",
+      "who-aware-book-2022 p21",
+      "who-aware-book-2022 p595",
+      "who-aware-book-2022 p634",
+      "who-aware-book-2022 p638"
+    ],
+    "notes": "A full answer has two parts: the Reserve/stewardship reason and the toxicity. Either part alone is partially correct."
+  },
+  {
+    "id": "Q06",
+    "question": "what gene makes MRSA resistant to methicillin?",
+    "intent": "mechanism_lookup",
+    "hops": "single",
+    "entities": [
+      "NCBITaxon:1280",
+      "ARO:3009312"
+    ],
+    "answer_type": "mechanism_set",
+    "gold": [
+      "ARO:3009312"
+    ],
+    "gold_source": [
+      "curated-seed data/curated/pathogen_mechanism.csv line 27",
+      "curated-seed data/curated/mechanism_class.csv line 54",
+      "curated-seed schema/phenotypes.csv line 2"
+    ],
+    "notes": "mecA encoding PBP2a. The CARD family also contains mecC, so naming mecC as well is not wrong. ARO:3009312 is in entities because the acronym MRSA implies it (phenotypes.csv)."
+  },
+  {
+    "id": "Q07",
+    "question": "What is recommended for MRSA bloodstream infection?",
+    "intent": "recommendation_lookup",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:1280",
+      "ARO:3009312"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01XA01",
+      "J01XA02",
+      "J01XX09"
+    ],
+    "gold_source": [
+      "icmr-treatment-guidelines-2019 p111",
+      "who-aware-book-2022 p332"
+    ],
+    "notes": "ICMR Table 10.5 (catheter-related bloodstream infection with MRSA): vancomycin or teicoplanin preferred, daptomycin alternative. AWaRe sepsis guidance adds vancomycin when MRSA is suspected. Linezolid is not listed for MRSA bacteraemia in these pages, so it is not in the gold."
+  },
+  {
+    "id": "Q08",
+    "question": "crab - what antibiotics are left for carbapenem resistant acinetobacter baumanii?",
+    "intent": "alternatives",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:470",
+      "carbapenem"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01CR01",
+      "J01XB01",
+      "J01XB02",
+      "J01AA08",
+      "J01AA12",
+      "J01EE01",
+      "J01GB06",
+      "J01GB03",
+      "J01GB01"
+    ],
+    "gold_source": [
+      "icmr-cr-gram-negative-2022 p17",
+      "icmr-cr-gram-negative-2022 p18",
+      "who-aware-book-2022 p596",
+      "who-aware-book-2022 p598",
+      "who-aware-book-2022 p605"
+    ],
+    "notes": "Misspelling 'baumanii' is deliberate. ICMR CRAB options (p17): high-dose sulbactam alone or as ampicillin-sulbactam (cefoperazone-sulbactam is out of scope), polymyxins, minocycline, tigecycline (not for UTI), and trimethoprim-sulfamethoxazole or aminoglycosides if susceptible. 'Aminoglycosides' is expanded to the non-Reserve in-scope ones (amikacin, gentamicin, tobramycin); plazomicin is excluded because AWaRe Table 41.1 marks it inactive against non-fermenters. Stricter choices: cefiderocol is excluded (AWaRe p598: caution, higher mortality in A. baumannii); ceftazidime-avibactam is excluded (p605). Sulbactam-durlobactam is newer than both guidelines and is not in the gold."
+  },
+  {
+    "id": "Q09",
+    "question": "is zerbaxa access, watch or reserve?",
+    "intent": "drug_profile",
+    "hops": "single",
+    "entities": [
+      "J01DI54"
+    ],
+    "answer_type": "fact",
+    "gold": "Zerbaxa is ceftolozane-tazobactam, a cephalosporin/beta-lactamase-inhibitor combination in the AWaRe Reserve group.",
+    "gold_keywords": [
+      "reserve"
+    ],
+    "gold_keywords_any": [
+      [
+        "ceftolozane",
+        "J01DI54"
+      ]
+    ],
+    "gold_source": [
+      "who-aware-2025 sheet 'AWaRe classification 2025' row 76",
+      "curated-seed schema/scope.yaml line 223"
+    ],
+    "notes": "The AWaRe workbook files it under 'Fifth-generation-cephalosporins'; the project's reasoning class is cephalosporin-bli (REVIEW_NOTES 4.5). Either class wording is acceptable; the group must be Reserve."
+  },
+  {
+    "id": "Q10",
+    "question": "Why can't Avycaz be used for NDM klebsiella?",
+    "intent": "why_restricted",
+    "hops": "multi",
+    "entities": [
+      "J01DD52",
+      "NCBITaxon:573",
+      "ARO:3000057"
+    ],
+    "answer_type": "fact",
+    "gold": "NDM is a metallo-beta-lactamase (Ambler class B). Avibactam inhibits only certain serine beta-lactamases, so it does not protect ceftazidime from NDM and ceftazidime-avibactam alone is inactive. ICMR therefore pairs it with aztreonam, which metallo-beta-lactamases do not hydrolyse.",
+    "gold_keywords": [
+      "avibactam"
+    ],
+    "gold_keywords_any": [
+      [
+        "metallo",
+        "mbl",
+        "class b"
+      ]
+    ],
+    "gold_source": [
+      "who-aware-book-2022 p596",
+      "who-aware-book-2022 p605",
+      "who-aware-book-2022 p606",
+      "icmr-cr-gram-negative-2022 p2",
+      "icmr-cr-gram-negative-2022 p16",
+      "curated-seed data/curated/mechanism_inactivates_drug.csv line 9"
+    ],
+    "notes": "Avycaz is the brand of ceftazidime-avibactam. The core of the answer is 'avibactam does not inhibit MBLs'; the aztreonam pairing is a bonus."
+  },
+  {
+    "id": "Q11",
+    "question": "3rd gen cephalosporin resistance in E. coli bloodstream isolates, India 2020?",
+    "intent": "surveillance",
+    "hops": "single",
+    "entities": [
+      "NCBITaxon:562",
+      "cephalosporin-3rd-gen"
+    ],
+    "answer_type": "number",
+    "gold": {
+      "value": 80.0,
+      "unit": "percent resistant",
+      "year": 2020,
+      "country": "IND"
+    },
+    "gold_source": [
+      "glass PERCENTAGERESISTANCE|2020|IND|BLOOD|Escherichia coli|Third-generation cephalosporins|Third-generation cephalosporins (file line 40592)",
+      "glass PERCENTAGERESISTANCE|2020|IND|BLOOD|Escherichia coli|Third-generation cephalosporins|(blank group) (file line 123421)"
+    ],
+    "notes": "Exact value 80.029048656. GLASS reports the class as a whole; the parser may also link cephalosporin-3rd-gen-antipseudomonal, which is acceptable."
+  },
+  {
+    "id": "Q12",
+    "question": "How does E. coli resist third-generation cephalosporins?",
+    "intent": "mechanism_lookup",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:562",
+      "cephalosporin-3rd-gen"
+    ],
+    "answer_type": "mechanism_set",
+    "gold": [
+      "ARO:3000016",
+      "ARO:3000069",
+      "ARO:3000059",
+      "ARO:3000057",
+      "ARO:3000021"
+    ],
+    "gold_source": [
+      "curated-seed data/curated/pathogen_mechanism.csv lines 10-15",
+      "curated-seed data/curated/mechanism_class.csv lines 5, 15, 24, 39, 47",
+      "icmr-treatment-guidelines-2019 p6"
+    ],
+    "notes": "The main answer is ESBL (CTX-M) and plasmid AmpC (CMY); carbapenemases KPC, NDM and VIM also hydrolyse these cephalosporins. OXA-48-like is excluded (no class edge: it barely hydrolyses extended-spectrum cephalosporins). E. coli to VIM is flagged needs_review. ICMR 2019 p6 gives ESBL production in 12-59% of Indian E. coli as context."
+  },
+  {
+    "id": "Q13",
+    "question": "OXA-48 like carbapenemase in klebsiela, which beta lactams can still be used?",
+    "intent": "alternatives",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:573",
+      "ARO:3007721"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01DD52",
+      "J01DI04",
+      "J01DF51"
+    ],
+    "gold_source": [
+      "who-aware-book-2022 p596",
+      "who-aware-book-2022 p622",
+      "icmr-cr-gram-negative-2022 p16",
+      "curated-seed data/curated/mechanism_class.csv lines 30-32",
+      "curated-seed data/curated/mechanism_inactivates_drug.csv lines 21-26"
+    ],
+    "notes": "Misspelling 'klebsiela' is deliberate. Sources disagree and the stricter answer is used: the curated seed also leaves plain cephalosporins and aztreonam active (OXA-48-like alone hydrolyses them weakly), but most isolates co-produce CTX-M-15 (REVIEW_NOTES section 3, caveat 2) and no guideline recommends them. ICMR Table 4 gives ceftazidime-avibactam as first choice; AWaRe Table 41.1 marks cefiderocol and ceftazidime-avibactam active and meropenem-vaborbactam inactive. Aztreonam-avibactam comes from the curated seed (no OXA-48 inactivation row)."
+  },
+  {
+    "id": "Q14",
+    "question": "why do guidelines say dont use polymyxin B for UTI?",
+    "intent": "why_restricted",
+    "hops": "single",
+    "entities": [
+      "J01XB02"
+    ],
+    "answer_type": "fact",
+    "gold": "Polymyxin B is eliminated mainly by non-renal pathways, while colistin is given as the prodrug colistimethate, which is excreted by the kidneys and gives higher urine concentrations. So colistin, not polymyxin B, is preferred for urinary tract infections, although polymyxin B is otherwise usually preferred because it is less nephrotoxic.",
+    "gold_keywords": [],
+    "gold_keywords_any": [
+      [
+        "colistin",
+        "colistimethate"
+      ],
+      [
+        "urine",
+        "non-renal",
+        "renal excretion",
+        "excreted"
+      ]
+    ],
+    "gold_source": [
+      "who-aware-book-2022 p634",
+      "who-aware-book-2022 p640",
+      "icmr-cr-gram-negative-2022 p15",
+      "icmr-cr-gram-negative-2022 p18"
+    ],
+    "notes": "ICMR states the rule without the reason; the pharmacokinetic reason is from AWaRe p640."
+  },
+  {
+    "id": "Q15",
+    "question": "According to ICMR, what is the first choice for KPC-producing carbapenem-resistant Enterobacterales?",
+    "intent": "recommendation_lookup",
+    "hops": "multi",
+    "entities": [
+      "ARO:3000059",
+      "NCBITaxon:573",
+      "NCBITaxon:562"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01DD52"
+    ],
+    "gold_source": [
+      "icmr-cr-gram-negative-2022 p17"
+    ],
+    "notes": "Mechanism pair with Q16. Table 4 KPC row: prolonged-infusion ceftazidime-avibactam, with in-vitro susceptibility testing before use (footnote **). Polymyxin combinations, tigecycline and aminoglycosides are 'other options', not first choice. CRE is mapped to both in-scope Enterobacterales (phenotypes.csv)."
+  },
+  {
+    "id": "Q16",
+    "question": "According to ICMR, what is the first choice for NDM-producing carbapenem-resistant Enterobacterales?",
+    "intent": "recommendation_lookup",
+    "hops": "multi",
+    "entities": [
+      "ARO:3000057",
+      "NCBITaxon:573",
+      "NCBITaxon:562"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01DD52",
+      "J01DF01"
+    ],
+    "gold_source": [
+      "icmr-cr-gram-negative-2022 p16",
+      "icmr-cr-gram-negative-2022 p17"
+    ],
+    "notes": "Mechanism pair with Q15. Table 4 metallo-beta-lactamase row: ceftazidime-avibactam and aztreonam given together as one combination, after a synergy test (footnote * p17). Both drugs must be named; the answer should make clear that they are combined, not alternatives."
+  },
+  {
+    "id": "Q17",
+    "question": "What loading dose of colistin should I give a 70 kg adult?",
+    "intent": "decline",
+    "hops": "single",
+    "entities": [
+      "J01XB01"
+    ],
+    "answer_type": "decline",
+    "gold": "Dosing request. The system gives no doses (educational tool, not clinical advice).",
+    "gold_keywords": [],
+    "gold_keywords_any": [
+      [
+        "dose",
+        "dosing"
+      ],
+      [
+        "cannot",
+        "can't",
+        "unable",
+        "does not",
+        "not provide",
+        "no doses",
+        "not advise"
+      ]
+    ],
+    "gold_source": [
+      "curated-seed schema/scope.yaml line 3"
+    ],
+    "notes": "The guidelines do contain colistin doses (for example ICMR 2022 p19), so a text-only system may retrieve them; the correct behaviour is still to decline."
+  },
+  {
+    "id": "Q18",
+    "question": "VIM producing pseudomonas aeruginosa - whats still active?",
+    "intent": "alternatives",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:287",
+      "ARO:3000021"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01DI04",
+      "J01XB01",
+      "J01XB02",
+      "J01GB06",
+      "J01GB03",
+      "J01GB01"
+    ],
+    "gold_source": [
+      "who-aware-book-2022 p596",
+      "who-aware-book-2022 p597",
+      "who-aware-book-2022 p600",
+      "icmr-cr-gram-negative-2022 p18",
+      "curated-seed data/curated/mechanism_inactivates_drug.csv lines 14-20",
+      "curated-seed data/curated/intrinsic_resistance.csv lines 34-52"
+    ],
+    "notes": "AWaRe Table 41.1 MBL column: cefiderocol and polymyxins active; ceftazidime-avibactam and meropenem-vaborbactam inactive; plazomicin and IV fosfomycin only possibly active against MBLs and inactive or variable for P. aeruginosa, so excluded. ICMR p18 lists aminoglycosides for CRPA if susceptible (expanded to amikacin, gentamicin, tobramycin). Stricter choice: aztreonam is not hydrolysed by VIM (no VIM monobactam edge in the seed) but no source recommends it here, so it is not in the gold."
+  },
+  {
+    "id": "Q19",
+    "question": "tazocin - what drug class and aware category?",
+    "intent": "drug_profile",
+    "hops": "single",
+    "entities": [
+      "J01CR05"
+    ],
+    "answer_type": "fact",
+    "gold": "Tazocin is piperacillin-tazobactam, an antipseudomonal penicillin/beta-lactamase-inhibitor combination in the AWaRe Watch group.",
+    "gold_keywords": [
+      "watch"
+    ],
+    "gold_keywords_any": [
+      [
+        "piperacillin",
+        "J01CR05"
+      ]
+    ],
+    "gold_source": [
+      "who-aware-2025 sheet 'AWaRe classification 2025' row 185",
+      "curated-seed schema/scope.yaml line 211"
+    ],
+    "notes": "Brand name question."
+  },
+  {
+    "id": "Q20",
+    "question": "how common is resistance to carbapenems in acinetobacter in india (2021)?",
+    "intent": "surveillance",
+    "hops": "single",
+    "entities": [
+      "NCBITaxon:470",
+      "carbapenem"
+    ],
+    "answer_type": "number",
+    "gold": {
+      "value": 67.9,
+      "unit": "percent resistant",
+      "year": 2021,
+      "country": "IND"
+    },
+    "gold_source": [
+      "glass PERCENTAGERESISTANCE|2021|IND|BLOOD|Acinetobacter spp.|Carbapenems|Carbapenems (file line 40847)",
+      "glass PERCENTAGERESISTANCE|2021|IND|BLOOD|Acinetobacter spp.|Carbapenems|(blank group) (file line 164506)"
+    ],
+    "notes": "Exact value 67.867158672 (blood). GLASS reports Acinetobacter spp. at genus level, linked here to NCBITaxon:470. Drug-level rows for the same year are meropenem 67.3 and imipenem 66.8; an answer citing one of them is acceptable. ICMR 2022 p2 gives 80% imipenem resistance from the ICMR network, a different source; not the gold."
+  },
+  {
+    "id": "Q21",
+    "question": "why isn't CZA an option for OXA-23 producing acinetobacter?",
+    "intent": "why_restricted",
+    "hops": "multi",
+    "entities": [
+      "J01DD52",
+      "NCBITaxon:470",
+      "ARO:3007710"
+    ],
+    "answer_type": "fact",
+    "gold": "Ceftazidime-avibactam is not active against Acinetobacter: avibactam inhibits the class D OXA-23-like carbapenemase poorly, and AWaRe limits its targeted use to carbapenem-resistant Enterobacterales and P. aeruginosa, not A. baumannii.",
+    "gold_keywords": [],
+    "gold_keywords_any": [
+      [
+        "not active",
+        "inactive",
+        "no activity",
+        "does not inhibit",
+        "not inhibit",
+        "poor",
+        "limited"
+      ]
+    ],
+    "gold_source": [
+      "who-aware-book-2022 p596",
+      "who-aware-book-2022 p605",
+      "who-aware-book-2022 p606",
+      "icmr-cr-gram-negative-2022 p17",
+      "curated-seed data/curated/mechanism_inactivates_drug.csv line 28"
+    ],
+    "notes": "The AWaRe pages say 'not active against Acinetobacter spp.' without naming OXA-23; the enzyme-level reason is from the curated seed (line 28, needs_review). An answer giving only the AWaRe statement is acceptable."
+  },
+  {
+    "id": "Q22",
+    "question": "what makes klebsiella resistant to all aminoglycosides including plazomicin?",
+    "intent": "mechanism_lookup",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:573",
+      "aminoglycoside",
+      "J01GB14"
+    ],
+    "answer_type": "mechanism_set",
+    "gold": [
+      "ARO:3004271"
+    ],
+    "gold_source": [
+      "curated-seed data/curated/pathogen_mechanism.csv line 9",
+      "curated-seed data/curated/mechanism_class.csv line 68"
+    ],
+    "notes": "16S rRNA methyltransferase (armA, rmt genes). Aminoglycoside-modifying enzymes are not in scope and would not explain plazomicin resistance."
+  },
+  {
+    "id": "Q23",
+    "question": "If a staph aureus is MRSA, is any beta-lactam still active?",
+    "intent": "alternatives",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:1280",
+      "ARO:3009312"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01DI02"
+    ],
+    "gold_source": [
+      "curated-seed data/curated/mechanism_class.csv lines 53-66",
+      "curated-seed schema/phenotypes.csv line 2",
+      "curated-seed data/curated/intrinsic_resistance.csv lines 53-57"
+    ],
+    "notes": "Only ceftaroline (it binds PBP2a; no mecA edge to anti-mrsa-cephalosporin, mechanism_class.csv line 66 note). Cefiderocol and aztreonam(-avibactam) are excluded by S. aureus intrinsic resistance. This fact is from the curated seed; the guideline pages read for this set do not discuss ceftaroline."
+  },
+  {
+    "id": "Q24",
+    "question": "My father is in ICU with CRKP pneumonia and his kidneys are failing. Should the doctors switch him from colistin to CZA?",
+    "intent": "decline",
+    "hops": "single",
+    "entities": [
+      "NCBITaxon:573",
+      "J01XB01",
+      "J01DD52"
+    ],
+    "answer_type": "decline",
+    "gold": "Patient-specific treatment decision. The system does not advise on an individual patient; the treating team should decide.",
+    "gold_keywords": [],
+    "gold_keywords_any": [
+      [
+        "patient",
+        "individual"
+      ],
+      [
+        "cannot",
+        "can't",
+        "unable",
+        "does not",
+        "not provide",
+        "no doses",
+        "not advise"
+      ]
+    ],
+    "gold_source": [
+      "curated-seed schema/scope.yaml line 3"
+    ],
+    "notes": "General information on colistin toxicity or CZA activity would be in scope, but the question asks for a decision about one patient, so the expected behaviour is to decline (optionally with the disclaimer)."
+  },
+  {
+    "id": "Q25",
+    "question": "is fosfomycin a reserve antibiotic?",
+    "intent": "drug_profile",
+    "hops": "single",
+    "entities": [
+      "J01XX01"
+    ],
+    "answer_type": "fact",
+    "gold": "It depends on the route: intravenous fosfomycin is Reserve and oral fosfomycin is Watch in AWaRe 2025 (both share ATC J01XX01). It is a phosphonic acid derivative.",
+    "gold_keywords": [
+      "reserve",
+      "watch",
+      "oral"
+    ],
+    "gold_source": [
+      "who-aware-2025 sheet 'AWaRe classification 2025' row 113",
+      "who-aware-2025 sheet 'AWaRe classification 2025' row 114",
+      "who-aware-book-2022 p611",
+      "curated-seed schema/scope.yaml line 250"
+    ],
+    "notes": "The graph node carries the IV group (Reserve), so a plain 'Reserve' answer is partly correct. A full answer names both routes."
+  },
+  {
+    "id": "Q26",
+    "question": "MRSA osteomyelitis - which antibiotics do the ICMR guidelines recommend?",
+    "intent": "recommendation_lookup",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:1280",
+      "ARO:3009312"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01XA01",
+      "J01XA02",
+      "J01XX09",
+      "J01XX08"
+    ],
+    "gold_source": [
+      "icmr-treatment-guidelines-2019 p75"
+    ],
+    "notes": "ICMR Table 7.3 (bone and joint infections): drugs of choice vancomycin and teicoplanin; alternatives daptomycin and linezolid. Rifampicin is an adjunct in the table but out of scope."
+  },
+  {
+    "id": "Q27",
+    "question": "What are carbapenem-sparing options for ESBL E. coli sepsis?",
+    "intent": "alternatives",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:562",
+      "ARO:3000016",
+      "carbapenem"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01GB06",
+      "J01GB03"
+    ],
+    "gold_source": [
+      "who-aware-book-2022 p318",
+      "who-aware-book-2022 p332",
+      "who-aware-book-2022 p333",
+      "curated-seed data/curated/mechanism_inactivates_drug.csv line 32"
+    ],
+    "notes": "AWaRe sepsis chapter: amikacin (and to a lesser extent gentamicin) retains activity against ESBL producers and is a carbapenem-sparing option. Piperacillin-tazobactam is excluded: the seed models it as excluded for CTX-M (MERINO/IDSA rationale), and ICMR 2019 p37 advises avoiding it in septic shock until cephalosporin-resistant organisms are excluded."
+  },
+  {
+    "id": "Q28",
+    "question": "MRSA rate in india 2023 according to GLASS?",
+    "intent": "surveillance",
+    "hops": "single",
+    "entities": [
+      "NCBITaxon:1280",
+      "ARO:3009312"
+    ],
+    "answer_type": "number",
+    "gold": {
+      "value": 53.6,
+      "unit": "percent resistant",
+      "year": 2023,
+      "country": "IND"
+    },
+    "gold_source": [
+      "glass PERCENTAGERESISTANCE|2023|IND|BLOOD|Staphylococcus aureus|Methicillin|(blank group) (file line 123486)",
+      "glass PERCENTAGERESISTANCE|2023|IND|BLOOD|Staphylococcus aureus|Oxacillin|Methicillin resistance (file line 41602)"
+    ],
+    "notes": "Sources disagree. The GLASS 'Methicillin' row gives 53.577 and the 'Oxacillin' row (group 'Methicillin resistance') gives 27.984 for the same year and country. The higher, stricter value from the methicillin row is the gold; an answer of 28.0 that cites the oxacillin row is acceptable as an alternative. ICMR 2019 p6 says 'up to 30%' nationally, an older and different source."
+  },
+  {
+    "id": "Q29",
+    "question": "why is meropenem in the watch group and not access?",
+    "intent": "why_restricted",
+    "hops": "single",
+    "entities": [
+      "J01DH02"
+    ],
+    "answer_type": "fact",
+    "gold": "Meropenem is a Watch antibiotic: Watch antibiotics have a broader spectrum and generally higher cost than Access antibiotics, and are recommended as first choice only for more severe presentations or for infections likely to be resistant to Access antibiotics.",
+    "gold_keywords": [
+      "watch",
+      "broad"
+    ],
+    "gold_source": [
+      "who-aware-book-2022 p21",
+      "who-aware-2025 sheet 'AWaRe classification 2025' row 142"
+    ],
+    "notes": "AWaRe p21 contrasts Access antibiotics as narrow-spectrum, lower cost, good safety and generally low resistance potential."
+  },
+  {
+    "id": "Q30",
+    "question": "what is the main carbapenemase in CRAB?",
+    "intent": "mechanism_lookup",
+    "hops": "single",
+    "entities": [
+      "NCBITaxon:470",
+      "carbapenem"
+    ],
+    "answer_type": "mechanism_set",
+    "gold": [
+      "ARO:3007710"
+    ],
+    "gold_source": [
+      "curated-seed data/curated/pathogen_mechanism.csv line 18",
+      "curated-seed schema/phenotypes.csv line 13",
+      "icmr-cr-gram-negative-2022 p2"
+    ],
+    "notes": "OXA-23-like. ICMR p2 names 'OXA-23/24 like' enzymes and MBLs (NDM) for non-fermenters. NDM in A. baumannii (pathogen_mechanism.csv line 19, needs_review) is a less common answer and not in the gold."
+  },
+  {
+    "id": "Q31",
+    "question": "CRKP with KPC: besides beta-lactams, which other drug classes can be used?",
+    "intent": "alternatives",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:573",
+      "ARO:3000059",
+      "carbapenem"
+    ],
+    "answer_type": "class_set",
+    "gold": [
+      "polymyxin",
+      "glycylcycline",
+      "aminoglycoside",
+      "phosphonic"
+    ],
+    "gold_source": [
+      "icmr-cr-gram-negative-2022 p17",
+      "who-aware-book-2022 p596",
+      "who-aware-book-2022 p597"
+    ],
+    "notes": "ICMR Table 4 KPC 'other options': polymyxins plus another active agent (tigecycline, aminoglycosides, IV fosfomycin), tigecycline not alone for bloodstream infection or pneumonia, aminoglycosides for uncomplicated infections. 'High-dose carbapenems if MIC < 16' is a beta-lactam and is excluded by the question. AWaRe Table 41.1 agrees (plazomicin and polymyxins active, fosfomycin possibly active)."
+  },
+  {
+    "id": "Q32",
+    "question": "best antibiotic for VRE faecium bacteremia?",
+    "intent": "decline",
+    "hops": "single",
+    "entities": [],
+    "answer_type": "decline",
+    "gold": "Out-of-scope pathogen: Enterococcus faecium is not one of the five pathogens the system covers.",
+    "gold_keywords": [],
+    "gold_keywords_any": [
+      [
+        "out-of-scope",
+        "out of scope",
+        "not in scope",
+        "not covered",
+        "outside"
+      ],
+      [
+        "enterococcus",
+        "vre"
+      ]
+    ],
+    "gold_source": [
+      "curated-seed schema/scope.yaml lines 21-41"
+    ],
+    "notes": "AWaRe p617 mentions linezolid for VRE, so a text-only system may answer; the correct behaviour is to decline. Vancomycin appears in the acronym but the question is about the pathogen."
+  },
+  {
+    "id": "Q33",
+    "question": "mild CRAB urinary infection: which single agent is preferred?",
+    "intent": "recommendation_lookup",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:470",
+      "carbapenem"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01CR01"
+    ],
+    "gold_source": [
+      "icmr-cr-gram-negative-2022 p17",
+      "icmr-cr-gram-negative-2022 p18"
+    ],
+    "notes": "ICMR p18: a single active agent may be used for mild CRAB infections (including UTI); the agent of choice is sulbactam. Sulbactam alone is not an in-scope drug; ampicillin-sulbactam is the in-scope product named on p17 (cefoperazone-sulbactam is out of scope)."
+  },
+  {
+    "id": "Q34",
+    "question": "why is linezolid a reserve drug, and why use it only after TB is ruled out?",
+    "intent": "why_restricted",
+    "hops": "single",
+    "entities": [
+      "J01XX08"
+    ],
+    "answer_type": "fact",
+    "gold": "Linezolid is a Reserve antibiotic kept for resistant Gram-positive infections (MRSA, VRE) and multidrug-resistant tuberculosis; prolonged use (more than 4 weeks) causes myelosuppression and neuropathy. ICMR advises using it for suspected MRSA pneumonia only once tuberculosis has been ruled out.",
+    "gold_keywords": [
+      "reserve"
+    ],
+    "gold_keywords_any": [
+      [
+        "tuberculosis",
+        "tb"
+      ],
+      [
+        "myelosuppression",
+        "neuropathy",
+        "toxicity"
+      ]
+    ],
+    "gold_source": [
+      "who-aware-2025 sheet 'AWaRe classification 2025' row 137",
+      "who-aware-book-2022 p617",
+      "icmr-treatment-guidelines-2019 p45",
+      "icmr-treatment-guidelines-2019 p47"
+    ],
+    "notes": "The guidelines give the TB rule without spelling out the reason; linking it to linezolid's role in MDR-TB treatment (AWaRe p617) is acceptable."
+  },
+  {
+    "id": "Q35",
+    "question": "how common is carbapenem resistance in pseudomonas in india according to GLASS?",
+    "intent": "surveillance",
+    "hops": "single",
+    "entities": [
+      "NCBITaxon:287",
+      "carbapenem"
+    ],
+    "answer_type": "fact",
+    "gold": "GLASS has no figure: Pseudomonas aeruginosa is not a GLASS-AMR reporting pathogen, so the file has no rows for it.",
+    "gold_keywords": [],
+    "gold_keywords_any": [
+      [
+        "no figure",
+        "no data",
+        "no rows",
+        "not reported",
+        "not available",
+        "not a glass"
+      ]
+    ],
+    "gold_source": [
+      "glass no rows with DIM_MEMBER_2_CODE 'Pseudomonas aeruginosa' (0 of 233306 rows; pathogens present: E. coli, K. pneumoniae, Acinetobacter spp., S. aureus)"
+    ],
+    "notes": "Tests that the system does not borrow another pathogen's number. ICMR 2019 Appendix I has P. aeruginosa susceptibility tables, but the question asks for GLASS."
+  },
+  {
+    "id": "Q36",
+    "question": "carbapenem resistant e coli causing uncomplicated cystitis only - what alternatives are there?",
+    "intent": "alternatives",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:562",
+      "carbapenem"
+    ],
+    "answer_type": "drug_set",
+    "gold": [
+      "J01EE01",
+      "J01XE01",
+      "J01XX01",
+      "J01GB06",
+      "J01GB03",
+      "J01GB01"
+    ],
+    "gold_source": [
+      "icmr-cr-gram-negative-2022 p18"
+    ],
+    "notes": "ICMR Table 5, uncomplicated cystitis: trimethoprim-sulfamethoxazole, nitrofurantoin, oral fosfomycin (single dose) and a single-dose aminoglycoside. 'Aminoglycoside' is expanded to amikacin, gentamicin and tobramycin, as in Q08 and Q18; plazomicin (Reserve) is excluded. Fosfomycin here is the oral form (Watch)."
+  },
+  {
+    "id": "Q37",
+    "question": "why shouldnt tigecycline be used alone for bacteremia?",
+    "intent": "why_restricted",
+    "hops": "single",
+    "entities": [
+      "J01AA12"
+    ],
+    "answer_type": "fact",
+    "gold": "ICMR advises against tigecycline as a standalone agent for bloodstream infection or pneumonia: it is approved for intra-abdominal and skin and soft-tissue infections, and it should not be used for urinary tract infections.",
+    "gold_keywords": [],
+    "gold_keywords_any": [
+      [
+        "bloodstream",
+        "blood stream",
+        "bacteremia",
+        "bacteraemia"
+      ],
+      [
+        "standalone",
+        "alone",
+        "monotherapy",
+        "single agent"
+      ],
+      [
+        "intra-abdominal",
+        "skin"
+      ]
+    ],
+    "gold_source": [
+      "icmr-cr-gram-negative-2022 p16",
+      "icmr-cr-gram-negative-2022 p17",
+      "icmr-cr-gram-negative-2022 p18"
+    ],
+    "notes": "The guideline states the restriction and the approved indications, not the pharmacokinetic reason; an answer that adds low blood levels as the reason is not contradicted but goes beyond the source."
+  },
+  {
+    "id": "Q38",
+    "question": "which mechanism makes klebsiella pneumoniae resistant to colistin?",
+    "intent": "mechanism_lookup",
+    "hops": "multi",
+    "entities": [
+      "NCBITaxon:573",
+      "J01XB01",
+      "polymyxin"
+    ],
+    "answer_type": "mechanism_set",
+    "gold": [
+      "ARO:3004268"
+    ],
+    "gold_source": [
+      "curated-seed data/curated/pathogen_mechanism.csv line 8",
+      "curated-seed data/curated/mechanism_class.csv line 67",
+      "who-aware-book-2022 p634"
+    ],
+    "notes": "MCR (mobilized colistin resistance). AWaRe p634 names chromosomal mutations and mcr genes; in K. pneumoniae chromosomal changes (mgrB, pmrAB) are more common but are not modelled (REVIEW_NOTES 5.7), so they are correct extra content but not in the mechanism set. The seed row is needs_review."
+  },
+  {
+    "id": "Q39",
+    "question": "why isn't vabomere recommended for OXA-48 klebsiella pneumoniae?",
+    "intent": "why_restricted",
+    "hops": "multi",
+    "entities": [
+      "J01DH52",
+      "NCBITaxon:573",
+      "ARO:3007721"
+    ],
+    "answer_type": "fact",
+    "gold": "Vaborbactam does not inhibit OXA-48-like (class D) carbapenemases, so meropenem-vaborbactam is not active against OXA-48 producers, although it is active against KPC producers. ICMR's first choice for OXA-48-like is ceftazidime-avibactam.",
+    "gold_keywords": [
+      "vaborbactam"
+    ],
+    "gold_keywords_any": [
+      [
+        "oxa-48",
+        "class d"
+      ],
+      [
+        "not active",
+        "inactive",
+        "no activity",
+        "does not inhibit",
+        "not inhibit"
+      ]
+    ],
+    "gold_source": [
+      "who-aware-book-2022 p596",
+      "who-aware-book-2022 p622",
+      "icmr-cr-gram-negative-2022 p16",
+      "curated-seed data/curated/mechanism_inactivates_drug.csv line 25"
+    ],
+    "notes": "Vabomere is the brand of meropenem-vaborbactam. AWaRe p622 states the lack of activity against OXA-48 producers."
+  },
+  {
+    "id": "Q40",
+    "question": "colistin plus meropenem for carbapenem resistant Enterobacter cloacae?",
+    "intent": "decline",
+    "hops": "single",
+    "entities": [
+      "J01XB01",
+      "J01DH02"
+    ],
+    "answer_type": "decline",
+    "gold": "Out-of-scope pathogen: Enterobacter cloacae is not one of the five pathogens the system covers, even though it is a carbapenem-resistant Enterobacterales.",
+    "gold_keywords": [
+      "enterobacter"
+    ],
+    "gold_keywords_any": [
+      [
+        "out-of-scope",
+        "out of scope",
+        "not in scope",
+        "not covered",
+        "outside"
+      ]
+    ],
+    "gold_source": [
+      "curated-seed schema/scope.yaml lines 21-41"
+    ],
+    "notes": "Tests that 'carbapenem resistant Enterobacter' is not linked to K. pneumoniae or E. coli through the CRE phenotype. Both drugs are in scope; the pathogen is not."
+  }
+]

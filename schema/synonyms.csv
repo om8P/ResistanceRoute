@@ -426,3 +426,10 @@ ClassFamily,nitrofuran,Nitrofuran derivatives,Nitrofuran derivatives,canonical
 ClassFamily,nitrofuran,Nitrofuran derivatives,nitrofurans,variant
 ClassFamily,lincosamide,Lincosamides,Lincosamides,canonical
 ClassFamily,lincosamide,Lincosamides,lincosamide,variant
+Pathogen,NCBITaxon:573,Klebsiella pneumoniae,Kp,abbreviation
+Pathogen,NCBITaxon:573,Klebsiella pneumoniae,K.pneumoniae,variant
+Pathogen,NCBITaxon:562,Escherichia coli,Ecoli,variant
+Pathogen,NCBITaxon:562,Escherichia coli,E.coli,variant
+Pathogen,NCBITaxon:1280,Staphylococcus aureus,S.aureus,variant
+Pathogen,NCBITaxon:287,Pseudomonas aeruginosa,P.aeruginosa,variant
+Pathogen,NCBITaxon:470,Acinetobacter baumannii,A.baumannii,variant

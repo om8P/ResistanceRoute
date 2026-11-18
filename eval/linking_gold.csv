@@ -1,0 +1,165 @@
+text,surface,entity_type,entity_id
+Meropenem is a carbapenem used for ESBL infections.,Meropenem,Drug,J01DH02
+Meropenem is a carbapenem used for ESBL infections.,carbapenem,ClassFamily,carbapenem
+Meropenem is a carbapenem used for ESBL infections.,ESBL,Mechanism,ARO:3000016
+Which drugs still work against CRKP with KPC?,CRKP,Pathogen,NCBITaxon:573
+Which drugs still work against CRKP with KPC?,KPC,Mechanism,ARO:3000059
+Is ceftazidime-avibactam active against NDM-producing Klebsiella pneumoniae?,ceftazidime-avibactam,Drug,J01DD52
+Is ceftazidime-avibactam active against NDM-producing Klebsiella pneumoniae?,NDM,Mechanism,ARO:3000057
+Is ceftazidime-avibactam active against NDM-producing Klebsiella pneumoniae?,Klebsiella pneumoniae,Pathogen,NCBITaxon:573
+Use ceftazidime/avibactam for an OXA-48-like carbapenemase.,ceftazidime/avibactam,Drug,J01DD52
+Use ceftazidime/avibactam for an OXA-48-like carbapenemase.,OXA-48-like carbapenemase,Mechanism,ARO:3007721
+Treat with ceftazidime + avibactam plus aztreonam.,ceftazidime + avibactam,Drug,J01DD52
+Treat with ceftazidime + avibactam plus aztreonam.,aztreonam,Drug,J01DF01
+CZA resistance emerged during therapy.,CZA,Drug,J01DD52
+Zavicefta was started on day 2.,Zavicefta,Drug,J01DD52
+Avycaz versus Vabomere in KPC infections.,Avycaz,Drug,J01DD52
+Avycaz versus Vabomere in KPC infections.,Vabomere,Drug,J01DH52
+Avycaz versus Vabomere in KPC infections.,KPC,Mechanism,ARO:3000059
+Zosyn and Tazocin are brand names of piperacillin-tazobactam.,Zosyn,Drug,J01CR05
+Zosyn and Tazocin are brand names of piperacillin-tazobactam.,Tazocin,Drug,J01CR05
+Zosyn and Tazocin are brand names of piperacillin-tazobactam.,piperacillin-tazobactam,Drug,J01CR05
+Avoid pip-tazo for ESBL bacteraemia.,pip-tazo,Drug,J01CR05
+Avoid pip-tazo for ESBL bacteraemia.,ESBL,Mechanism,ARO:3000016
+The TZP MIC was 64.,TZP,Drug,J01CR05
+Colistin or polymyxin B for CRAB.,Colistin,Drug,J01XB01
+Colistin or polymyxin B for CRAB.,polymyxin B,Drug,J01XB02
+Colistin or polymyxin B for CRAB.,CRAB,Pathogen,NCBITaxon:470
+Acinetobacter baumannii carrying OXA-23.,Acinetobacter baumannii,Pathogen,NCBITaxon:470
+Acinetobacter baumannii carrying OXA-23.,OXA-23,Mechanism,ARO:3007710
+A. baumannii resistance to carbapenems.,A. baumannii,Pathogen,NCBITaxon:470
+A. baumannii resistance to carbapenems.,carbapenems,ClassFamily,carbapenem
+Pseudomonas aeruginosa with OprD loss.,Pseudomonas aeruginosa,Pathogen,NCBITaxon:287
+Pseudomonas aeruginosa with OprD loss.,OprD loss,Mechanism,LOCAL:mech:oprd-porin-loss
+What are the options for DTR-PA?,DTR-PA,Pathogen,NCBITaxon:287
+CRPA infections in the ICU.,CRPA,Pathogen,NCBITaxon:287
+"MRSA bacteraemia: vancomycin, daptomycin or linezolid.",MRSA,Pathogen,NCBITaxon:1280
+"MRSA bacteraemia: vancomycin, daptomycin or linezolid.",vancomycin,Drug,J01XA01
+"MRSA bacteraemia: vancomycin, daptomycin or linezolid.",daptomycin,Drug,J01XX09
+"MRSA bacteraemia: vancomycin, daptomycin or linezolid.",linezolid,Drug,J01XX08
+MSSA endocarditis treated with flucloxacillin.,MSSA,Pathogen,NCBITaxon:1280
+MSSA endocarditis treated with flucloxacillin.,flucloxacillin,Drug,J01CF05
+Staphylococcus aureus carrying mecA.,Staphylococcus aureus,Pathogen,NCBITaxon:1280
+Staphylococcus aureus carrying mecA.,mecA,Mechanism,ARO:3009312
+PBP2a causes methicillin resistance in S. aureus.,PBP2a,Mechanism,ARO:3009312
+PBP2a causes methicillin resistance in S. aureus.,methicillin resistance,Mechanism,ARO:3009312
+PBP2a causes methicillin resistance in S. aureus.,S. aureus,Pathogen,NCBITaxon:1280
+E. coli producing CTX-M-15.,E. coli,Pathogen,NCBITaxon:562
+E. coli producing CTX-M-15.,CTX-M-15,Mechanism,ARO:3000016
+ESBL-producing E. coli urinary infection.,ESBL,Mechanism,ARO:3000016
+ESBL-producing E. coli urinary infection.,E. coli,Pathogen,NCBITaxon:562
+ESBL-EC bloodstream infection.,ESBL-EC,Pathogen,NCBITaxon:562
+An ESBL-KP and CRKP outbreak.,ESBL-KP,Pathogen,NCBITaxon:573
+An ESBL-KP and CRKP outbreak.,CRKP,Pathogen,NCBITaxon:573
+CREC isolates were referred.,CREC,Pathogen,NCBITaxon:562
+Is nitrofurantoin suitable for cystitis?,nitrofurantoin,Drug,J01XE01
+Macrobid 100 mg twice daily.,Macrobid,Drug,J01XE01
+A single dose of fosfomycin trometamol.,fosfomycin trometamol,Drug,J01XX01
+TMP-SMX or co-trimoxazole.,TMP-SMX,Drug,J01EE01
+TMP-SMX or co-trimoxazole.,co-trimoxazole,Drug,J01EE01
+Bactrim is not recommended here.,Bactrim,Drug,J01EE01
+Fluoroquinolones such as ciprofloxacin and levofloxacin.,Fluoroquinolones,ClassFamily,fluoroquinolone
+Fluoroquinolones such as ciprofloxacin and levofloxacin.,ciprofloxacin,Drug,J01MA02
+Fluoroquinolones such as ciprofloxacin and levofloxacin.,levofloxacin,Drug,J01MA12
+"Aminoglycosides including gentamicin, amikacin and tobramycin.",Aminoglycosides,ClassFamily,aminoglycoside
+"Aminoglycosides including gentamicin, amikacin and tobramycin.",gentamicin,Drug,J01GB03
+"Aminoglycosides including gentamicin, amikacin and tobramycin.",amikacin,Drug,J01GB06
+"Aminoglycosides including gentamicin, amikacin and tobramycin.",tobramycin,Drug,J01GB01
+16S RMTase confers aminoglycoside resistance.,16S RMTase,Mechanism,ARO:3004271
+16S RMTase confers aminoglycoside resistance.,aminoglycoside,ClassFamily,aminoglycoside
+mcr-1 mediated colistin resistance.,mcr-1,Mechanism,ARO:3004268
+mcr-1 mediated colistin resistance.,colistin,Drug,J01XB01
+Tigecycline and eravacycline are tetracycline derivatives.,Tigecycline,Drug,J01AA12
+Tigecycline and eravacycline are tetracycline derivatives.,eravacycline,Drug,J01AA13
+Tigecycline and eravacycline are tetracycline derivatives.,tetracycline,ClassFamily,tetracycline
+Cefiderocol for metallo-beta-lactamase producers.,Cefiderocol,Drug,J01DI04
+The isolate was resistant to meropnem.,meropnem,Drug,J01DH02
+Switch to vancomicin if MRSA is confirmed.,vancomicin,Drug,J01XA01
+Switch to vancomicin if MRSA is confirmed.,MRSA,Pathogen,NCBITaxon:1280
+Start ceftriaxon empirically.,ceftriaxon,Drug,J01DD04
+Ciprofloxacine was stopped.,Ciprofloxacine,Drug,J01MA02
+Klebsiela pneumoniae was isolated from blood.,Klebsiela pneumoniae,Pathogen,NCBITaxon:573
+Pseudomonas aeruginsa grew on culture.,Pseudomonas aeruginsa,Pathogen,NCBITaxon:287
+Dosing of amoxicilin in renal failure.,amoxicilin,Drug,J01CA04
+Tigecyclin has poor serum levels.,Tigecyclin,Drug,J01AA12
+Ertapenam does not cover Pseudomonas.,Ertapenam,Drug,J01DH03
+Ertapenam does not cover Pseudomonas.,Pseudomonas,Pathogen,NCBITaxon:287
+Imipenam was given every 6 hours.,Imipenam,Drug,J01DH51
+Levofloxacine 750 mg daily.,Levofloxacine,Drug,J01MA12
+Treatment with pipercillin-tazobactam failed.,pipercillin-tazobactam,Drug,J01CR05
+MEROPENEM 1 g every 8 hours.,MEROPENEM,Drug,J01DH02
+She has a penicillin allergy.,penicillin,ClassFamily,penicillin
+Carbapenem-resistant Enterobacterales are a priority.,Carbapenem,ClassFamily,carbapenem
+β-lactam/β-lactamase inhibitor combinations are listed in the table.,β-lactam/β-lactamase inhibitor combinations,ClassFamily,beta-lactam-bli
+BL/BLI agents remain active.,BL/BLI,ClassFamily,beta-lactam-bli
+Third-generation cephalosporins fail against ESBL producers.,Third-generation cephalosporins,DrugClass,cephalosporin-3rd-gen
+Third-generation cephalosporins fail against ESBL producers.,ESBL,Mechanism,ARO:3000016
+Cephalosporins are widely used.,Cephalosporins,ClassFamily,cephalosporin
+ESBLs are common in India.,ESBLs,Mechanism,ARO:3000016
+Imipenem/relebactam for KPC.,Imipenem/relebactam,Drug,J01DH56
+Imipenem/relebactam for KPC.,KPC,Mechanism,ARO:3000059
+The regimen was imipenem-cilastatin-relebactam.,imipenem-cilastatin-relebactam,Drug,J01DH56
+Meropenem + vaborbactam is an option.,Meropenem + vaborbactam,Drug,J01DH52
+ATM-AVI and aztreonam-avibactam are the same drug.,ATM-AVI,Drug,J01DF51
+ATM-AVI and aztreonam-avibactam are the same drug.,aztreonam-avibactam,Drug,J01DF51
+Aztreonam + avibactam covers NDM.,Aztreonam + avibactam,Drug,J01DF51
+Aztreonam + avibactam covers NDM.,NDM,Mechanism,ARO:3000057
+SUL-DUR is used for Acinetobacter.,SUL-DUR,Drug,J01CG30
+SUL-DUR is used for Acinetobacter.,Acinetobacter,Pathogen,NCBITaxon:470
+Xacduro was approved in 2023.,Xacduro,Drug,J01CG30
+Ceftolozane-tazobactam for Pseudomonas.,Ceftolozane-tazobactam,Drug,J01DI54
+Ceftolozane-tazobactam for Pseudomonas.,Pseudomonas,Pathogen,NCBITaxon:287
+Ampicillin-sulbactam for Acinetobacter.,Ampicillin-sulbactam,Drug,J01CR01
+Ampicillin-sulbactam for Acinetobacter.,Acinetobacter,Pathogen,NCBITaxon:470
+Unasyn 3 g every 6 hours.,Unasyn,Drug,J01CR01
+Augmentin or co-amoxiclav.,Augmentin,Drug,J01CR02
+Augmentin or co-amoxiclav.,co-amoxiclav,Drug,J01CR02
+Amoxicillin-clavulanate for E. coli.,Amoxicillin-clavulanate,Drug,J01CR02
+Amoxicillin-clavulanate for E. coli.,E. coli,Pathogen,NCBITaxon:562
+Rocephin and Merrem are brand names.,Rocephin,Drug,J01DD04
+Rocephin and Merrem are brand names.,Merrem,Drug,J01DH02
+Primaxin versus Invanz.,Primaxin,Drug,J01DH51
+Primaxin versus Invanz.,Invanz,Drug,J01DH03
+"Tygacil, Zyvox and Cubicin.",Tygacil,Drug,J01AA12
+"Tygacil, Zyvox and Cubicin.",Zyvox,Drug,J01XX08
+"Tygacil, Zyvox and Cubicin.",Cubicin,Drug,J01XX09
+Teflaro for MRSA pneumonia.,Teflaro,Drug,J01DI02
+Teflaro for MRSA pneumonia.,MRSA,Pathogen,NCBITaxon:1280
+Escherichia coli and Klebsiella infections in neonates.,Escherichia coli,Pathogen,NCBITaxon:562
+Escherichia coli and Klebsiella infections in neonates.,Klebsiella,Pathogen,NCBITaxon:573
+K pneumoniae with blaKPC.,K pneumoniae,Pathogen,NCBITaxon:573
+K pneumoniae with blaKPC.,blaKPC,Mechanism,ARO:3000059
+blaNDM and VIM-2 were detected.,blaNDM,Mechanism,ARO:3000057
+blaNDM and VIM-2 were detected.,VIM-2,Mechanism,ARO:3000021
+Verona integron-encoded metallo-beta-lactamase in P. aeruginosa.,Verona integron-encoded metallo-beta-lactamase,Mechanism,ARO:3000021
+Verona integron-encoded metallo-beta-lactamase in P. aeruginosa.,P. aeruginosa,Pathogen,NCBITaxon:287
+AmpC overproduction in Pseudomonas.,AmpC overproduction,Mechanism,ARO:3000098
+AmpC overproduction in Pseudomonas.,Pseudomonas,Pathogen,NCBITaxon:287
+Plasmid AmpC such as CMY-2.,Plasmid AmpC,Mechanism,ARO:3000069
+Plasmid AmpC such as CMY-2.,CMY-2,Mechanism,ARO:3000069
+OXA-181 and NDM-1 co-occurred.,OXA-181,Mechanism,ARO:3007721
+OXA-181 and NDM-1 co-occurred.,NDM-1,Mechanism,ARO:3000057
+KPC-Kp bloodstream infection.,KPC-Kp,Pathogen,NCBITaxon:573
+Is CRE covered by cefiderocol?,CRE,Pathogen,NCBITaxon:573
+Is CRE covered by cefiderocol?,cefiderocol,Drug,J01DI04
+Amikacin for CRPA.,Amikacin,Drug,J01GB06
+Amikacin for CRPA.,CRPA,Pathogen,NCBITaxon:287
+Doxycycline and minocycline were tested.,Doxycycline,Drug,J01AA02
+Doxycycline and minocycline were tested.,minocycline,Drug,J01AA08
+Plazomicin and Zemdri are the same.,Plazomicin,Drug,J01GB14
+Plazomicin and Zemdri are the same.,Zemdri,Drug,J01GB14
+The patient was discharged home after a five day course.,,,
+What is the capital of France?,,,
+Resistance mechanisms are discussed in section 4.,,,
+Therapy was reviewed by the stewardship team.,,,
+Samples were collected from patients in 2022.,,,
+Dosage adjustments are required in renal impairment.,,,
+Gentle handling of specimens is required.,,,
+The minimal inhibitory concentration was determined by broth dilution.,,,
+Colitis and diarrhoea were reported.,,,
+Cephalexin and cefoxitin were not tested.,,,
+Azithromycin was given for atypical pneumonia.,,,
+Klebsiella oxytoca isolates were susceptible.,,,
+Staphylococcus epidermidis was a contaminant.,,,
+Hospital infection control guidelines were updated.,,,
+Clinical outcomes improved after treatment.,,,

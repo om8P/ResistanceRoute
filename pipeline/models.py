@@ -51,6 +51,12 @@ class LineOfTherapy(StrEnum):
     LAST_RESORT = "last-resort"
 
 
+class RegimenType(StrEnum):
+    SINGLE = "single"  # one drug
+    COMBINATION = "combination"  # all drugs together, one unit
+    ANY_OF = "any-of"  # alternatives, judged one by one
+
+
 class MechanismType(StrEnum):
     CARBAPENEMASE = "carbapenemase"
     ESBL = "esbl"
@@ -234,6 +240,7 @@ class Recommendation(_Node):
     infection_site: Optional[str] = None
     line_of_therapy: Optional[LineOfTherapy] = None
     patient_group: Optional[str] = None
+    regimen_type: Optional[RegimenType] = None  # D33
 
 
 class Guideline(_Node):
@@ -441,6 +448,7 @@ __all__ = [
     "Pathogen",
     "Recommendation",
     "RecommendationExtraction",
+    "RegimenType",
     "SurveillanceStat",
     "check_id",
     "is_valid_id",

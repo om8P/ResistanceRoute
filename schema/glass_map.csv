@@ -1,0 +1,31 @@
+glass_name,target_label,target_id
+Amikacin,Drug,J01GB06
+Ampicillin,Drug,J01CA01
+Cefepime,Drug,J01DE01
+Cefotaxime,Drug,J01DD01
+Ceftazidime,Drug,J01DD02
+Ceftriaxone,Drug,J01DD04
+Ciprofloxacin,Drug,J01MA02
+Co-trimoxazole,Drug,J01EE01
+Colistin,Drug,J01XB01
+Ertapenem,Drug,J01DH03
+Gentamicin,Drug,J01GB03
+Imipenem,Drug,J01DH51
+Levofloxacin,Drug,J01MA12
+Meropenem,Drug,J01DH02
+Minocycline,Drug,J01AA08
+Tigecycline,Drug,J01AA12
+Aminoglycosides,DrugClass,aminoglycoside
+Carbapenems,DrugClass,carbapenem
+Fluoroquinolones,DrugClass,fluoroquinolone
+Fourth-generation cephalosporins,DrugClass,cephalosporin-4th-gen
+Polymyxins,DrugClass,polymyxin
+Second-generation cephalosporines,DrugClass,cephalosporin-2nd-gen
+Sulfonamides and trimethoprim,DrugClass,sulfonamide-trimethoprim
+Tetracyclines,DrugClass,tetracycline
+Third-generation cephalosporins,DrugClass,cephalosporin-3rd-gen
+Cefoxitin,,
+Doripenem,,
+Methicillin,DrugClass,antistaphylococcal-penicillin
+Oxacillin,,
+Penicillins,,

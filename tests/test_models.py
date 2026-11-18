@@ -238,6 +238,21 @@ def test_every_line_of_therapy_accepted(line):
     assert rec.line_of_therapy == line
 
 
+@pytest.mark.parametrize("kind", ["single", "combination", "any-of"])
+def test_every_regimen_type_accepted(kind):
+    rec = Recommendation.model_validate({**VALID_ROWS["Recommendation"], "regimen_type": kind})
+    assert rec.regimen_type == kind
+    assert rec.to_row()["regimen_type"] == kind
+
+
+def test_regimen_type_is_optional_blank_and_checked():
+    base = VALID_ROWS["Recommendation"]
+    assert Recommendation.model_validate(base).regimen_type is None
+    assert Recommendation.model_validate({**base, "regimen_type": ""}).regimen_type is None
+    with pytest.raises(ValidationError):
+        Recommendation.model_validate({**base, "regimen_type": "either"})
+
+
 @pytest.mark.parametrize("kind", ["carbapenemase", "esbl", "ampc", "target-modification", "efflux", "porin-loss", "other"])
 def test_every_mechanism_type_accepted(kind):
     assert Mechanism.model_validate({**VALID_ROWS["Mechanism"], "type": kind}).type == kind

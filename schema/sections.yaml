@@ -1,0 +1,125 @@
+# Section map for the PDF guidelines (task T06, read by pipeline/ingest.py).
+#
+# pages: [first, last] are 1-based PDF pages, inclusive. printed page = PDF page - page_offset.
+# A section ends where the next section starts. When two sections share a page, the later one
+# carries start_heading: the section starts at the first line of its first page that begins
+# with that text (compared without spaces, case or punctuation, because the ICMR 2022 PDF has
+# stray spaces inside words).
+# skip: true means the section is read for boundaries only and produces no passages.
+# Slugs: lower-case letters, digits and hyphens. They become the middle part of passage IDs
+# (<source doc id>:<section slug>:<n>), so changing one renames every passage in it.
+#
+# extract: x_tolerance_ratio sets how wide a gap between letters must be, relative to the font
+#   size, before pdfplumber inserts a space. crop = [top, bottom] points removed from every
+#   page (running header and footer). columns: auto splits a page at its middle when no word
+#   crosses the middle line (the AWaRe infographic pages are two columns).
+# strip_references: drop the "References" list that closes a sub-chapter, up to the next
+#   numbered heading (ICMR 2019 prints its references inside the chapters).
+# tables: tables to read with pdfplumber's table finder and turn into one sentence per row.
+
+documents:
+  who-aware-book-2022:
+    file: who-aware-antibiotic-book-2022.pdf
+    title: The WHO AWaRe (Access, Watch, Reserve) antibiotic book (2022)
+    page_offset: 16
+    extract: {x_tolerance_ratio: 0.1, crop: [29, 35], columns: auto}
+    sections:
+      - {slug: front-matter, title: "Cover, contents, foreword, acronyms, glossary", pages: [1, 16], skip: true, reason: front matter}
+      - {slug: introduction, title: "1. Introduction", pages: [17, 20]}
+      - {slug: improving-antibiotic-use, title: "2. Improving the use of antibiotics with the AWaRe book", pages: [21, 35]}
+      - {slug: allergy-to-antibiotics, title: "3. Allergy to antibiotics", pages: [36, 42]}
+      - {slug: part-primary-health-care, title: "Divider: primary health care", pages: [43, 44], skip: true, reason: part divider page}
+      - {slug: bronchitis, title: "4. Bronchitis", pages: [45, 51]}
+      - {slug: acute-otitis-media, title: "5. Acute otitis media", pages: [52, 61]}
+      - {slug: pharyngitis, title: "6. Pharyngitis", pages: [62, 76]}
+      - {slug: acute-sinusitis, title: "7. Acute sinusitis", pages: [77, 87]}
+      - {slug: oral-dental-infections, title: "8. Oral and dental infections", pages: [88, 110]}
+      - {slug: lymphadenitis, title: "9. Localized acute bacterial lymphadenitis", pages: [111, 120]}
+      - {slug: eye-infections, title: "10. Bacterial eye infections (excluding trachoma)", pages: [121, 155]}
+      - {slug: trachoma, title: "11. Trachoma", pages: [156, 162]}
+      - {slug: cap-mild, title: "12. Community-acquired pneumonia - mild", pages: [163, 177]}
+      - {slug: copd-exacerbation, title: "13. Exacerbation of chronic obstructive pulmonary disease", pages: [178, 184]}
+      - {slug: acute-diarrhoea, title: "14. Acute infectious diarrhoea/gastroenteritis", pages: [185, 200]}
+      - {slug: enteric-fever, title: "15. Enteric fever", pages: [201, 208]}
+      - {slug: skin-soft-tissue-mild, title: "16. Skin and soft tissue infections - mild bacterial impetigo, erysipelas and cellulitis", pages: [209, 221]}
+      - {slug: burn-wound-infections, title: "17. Burn wound-related infections", pages: [222, 230]}
+      - {slug: wound-bite-infections, title: "18. Wound and bite-related infections", pages: [231, 245]}
+      - {slug: sti-chlamydia, title: "19. STI - chlamydial urogenital infection", pages: [246, 256]}
+      - {slug: sti-gonorrhoea, title: "20. STI - gonococcal infection", pages: [257, 269]}
+      - {slug: sti-syphilis, title: "21. STI - syphilis", pages: [270, 286]}
+      - {slug: sti-trichomoniasis, title: "22. STI - trichomoniasis", pages: [287, 293]}
+      - {slug: lower-uti, title: "23. Lower urinary tract infection", pages: [294, 308]}
+      - {slug: part-hospital-facility, title: "Divider: hospital facility", pages: [309, 310], skip: true, reason: part divider page}
+      - {slug: sepsis-adults, title: "24. Sepsis in adults (including septic shock)", pages: [311, 334]}
+      - {slug: sepsis-neonates-children, title: "25. Sepsis in neonates (< 28 days) and children (28 days-12 years)", pages: [335, 360]}
+      - {slug: meningitis, title: "26. Bacterial meningitis", pages: [361, 377]}
+      - {slug: cap-severe, title: "27. Community-acquired pneumonia - severe", pages: [378, 396]}
+      - {slug: hap, title: "28. Hospital-acquired pneumonia", pages: [397, 411]}
+      - {slug: cholecystitis-cholangitis, title: "29. Intra-abdominal infections - acute cholecystitis and cholangitis", pages: [412, 429]}
+      - {slug: liver-abscess, title: "30. Intra-abdominal infections - pyogenic liver abscess", pages: [430, 449]}
+      - {slug: appendicitis, title: "31. Intra-abdominal infections - acute appendicitis", pages: [450, 469]}
+      - {slug: diverticulitis, title: "32. Intra-abdominal infections - acute diverticulitis", pages: [470, 479]}
+      - {slug: c-difficile, title: "33. Intra-abdominal infections - Clostridioides difficile infection", pages: [480, 489]}
+      - {slug: upper-uti, title: "34. Upper urinary tract infection", pages: [490, 504]}
+      - {slug: osteomyelitis, title: "35. Acute bacterial osteomyelitis", pages: [505, 522]}
+      - {slug: septic-arthritis, title: "36. Septic arthritis", pages: [523, 538]}
+      - {slug: necrotizing-fasciitis, title: "37. Skin and soft tissue infections - necrotizing fasciitis", pages: [539, 550]}
+      - {slug: pyomyositis, title: "38. Skin and soft tissue infections - pyomyositis", pages: [551, 560]}
+      - {slug: febrile-neutropenia, title: "39. Febrile neutropenia", pages: [561, 577]}
+      - {slug: surgical-prophylaxis, title: "40. Surgical prophylaxis", pages: [578, 590]}
+      - {slug: part-reserve-antibiotics, title: "Divider: Reserve antibiotics", pages: [591, 592], skip: true, reason: part divider page}
+      - {slug: reserve-overview, title: "41. Reserve antibiotics - overview", pages: [593, 597]}
+      - {slug: cefiderocol, title: "42. Cefiderocol", pages: [598, 604]}
+      - {slug: ceftazidime-avibactam, title: "43. Ceftazidime+avibactam", pages: [605, 610]}
+      - {slug: fosfomycin-iv, title: "44. Fosfomycin (intravenous)", pages: [611, 616]}
+      - {slug: linezolid, title: "45. Linezolid", pages: [617, 621]}
+      - {slug: meropenem-vaborbactam, title: "46. Meropenem+vaborbactam", pages: [622, 626]}
+      - {slug: plazomicin, title: "47. Plazomicin", pages: [627, 632]}
+      - {slug: polymyxin-colistin, title: "48. Polymyxin B and colistin (polymyxin E)", pages: [633, 642]}
+      - {slug: dosing-adults, title: "49. Dosing guidance - adults", pages: [643, 654], skip: true, reason: dosing tables}
+      - {slug: dosing-children, title: "50. Dosing guidance - children", pages: [655, 668], skip: true, reason: dosing tables}
+      - {slug: references, title: "References", pages: [669, 697], skip: true, reason: reference list}
+
+  icmr-treatment-guidelines-2019:
+    file: icmr-treatment-guidelines-2019.pdf
+    title: ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes (2nd edition, 2019)
+    page_offset: 5
+    extract: {x_tolerance: 3}
+    strip_references: true
+    sections:
+      - {slug: front-matter, title: "Cover, foreword, instructions, contents", pages: [1, 5], skip: true, reason: front matter}
+      - {slug: introduction, title: "1. Introduction to antibiotic use", pages: [6, 9]}
+      - {slug: acute-fever, title: "2. Management of acute fever", pages: [10, 33]}
+      - {slug: sepsis, title: "3. Sepsis", pages: [34, 39]}
+      - {slug: respiratory-cap, title: "4. Respiratory tract infections and community-acquired pneumonia", pages: [40, 49]}
+      - {slug: intra-abdominal, title: "5. Intra-abdominal infections", pages: [50, 59]}
+      - {slug: skin-soft-tissue, title: "6. Skin and soft tissue infections", pages: [60, 65]}
+      - {slug: bone-joint, title: "7. Bone and joint infections", pages: [66, 79]}
+      - {slug: cns, title: "8. Central nervous system infections", pages: [80, 90]}
+      - {slug: uti, title: "9. Urinary tract infections", pages: [91, 97]}
+      - {slug: hospital-acquired, title: "10. Hospital-acquired infections", pages: [98, 130]}
+      - {slug: immunocompromised, title: "11. Infections in the immunocompromised host", pages: [131, 146]}
+      - {slug: pelvic, title: "12. Pelvic infections", pages: [147, 158]}
+      - {slug: endocarditis, title: "13. Infective endocarditis", pages: [159, 168]}
+      - {slug: tables-duration-dosage, title: "14. Tables on duration, drug interaction, dosage and administration", pages: [169, 187], skip: true, reason: dosing tables}
+      - {slug: appendix-i, title: "Appendix I. ICMR surveillance data 2018", pages: [188, 202], skip: true, reason: surveillance tables extract as one value per line}
+      - {slug: appendix-ii, title: "Appendix II. Index of tables", pages: [203, 206], skip: true, reason: table index}
+
+  icmr-cr-gram-negative-2022:
+    file: icmr-carbapenem-resistant-gram-negative-2022.pdf
+    title: ICMR Guidance on Diagnosis and Management of Carbapenem Resistant Gram-negative Infections (2022)
+    page_offset: 0
+    extract: {x_tolerance: 3}
+    tables:
+      - {id: table-4, pages: [16, 17], caption: "Table 4: Available treatment options for carbapenem resistant Enterobacterales in India", label_header: Carbapenemase}
+    sections:
+      - {slug: title-page, title: "Title page", pages: [1, 1], skip: true, reason: front matter}
+      - {slug: background, title: "1. Background", pages: [2, 4]}
+      - {slug: diagnosis, title: "2. Diagnosis of carbapenem resistance", pages: [4, 14], start_heading: "2. Diagnosis of carbapenem resistance"}
+      - {slug: empiric-therapy, title: "3. Recommendations: 3.1 Empiric therapy", pages: [15, 15], start_heading: "3. Recommendations for the management"}
+      - {slug: directed-enterobacterales, title: "3.2.1 Directed therapy: carbapenem-resistant Enterobacterales", pages: [15, 17], start_heading: "3.2 Directed Therapy"}
+      - {slug: directed-non-enterobacterales, title: "3.2.2 Directed therapy: carbapenem-resistant Acinetobacter and Pseudomonas", pages: [17, 18], start_heading: "3.2.2 Carbapenem Resistant Non"}
+      - {slug: duration-of-therapy, title: "Table 6: Duration of therapy", pages: [19, 19], start_heading: "Table 6"}
+      - {slug: dosage-table, title: "Table 7: Dosage of common antibiotics", pages: [19, 19], start_heading: "Table 7", skip: true, reason: dosing table}
+      - {slug: prevention, title: "4. Prevention", pages: [20, 20], start_heading: "4. Prevention"}
+      - {slug: references, title: "References", pages: [21, 24], skip: true, reason: reference list}

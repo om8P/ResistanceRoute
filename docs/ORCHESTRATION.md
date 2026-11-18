@@ -19,6 +19,18 @@ This project is built by several Claude sessions working in the same folder. One
 
 Model choice: **Opus 5.5** for clinical-domain judgement and query logic where an error is costly, **Sonnet 5.5** for general implementation, **Haiku 5.5** for small, fully specified tasks.
 
+### Effort levels (D38)
+
+Every worker session gets a reasoning effort chosen for its task, and **never above `high`**.
+
+| Effort | Use for |
+|---|---|
+| `low` | Mechanical work with a complete specification: formatting, small fixes, re-running a step |
+| `medium` | Normal implementation and data processing with clear contracts |
+| `high` | Clinical-domain judgement, reasoning-query logic, integration where errors are hard to see, the final report |
+
+The orchestrator may change a running worker's effort mid-session. It raises effort when a worker reports something hard or unexpected, or when a review sends back a subtle correction, and lowers it for follow-ups that are mechanical. A change applies from the worker's next turn. Workers who think their effort is wrong for what is left say so in their message or under "Requests to orchestrator"; they do not change it themselves.
+
 ## Rules for workers
 
 1. **Read first:** this file, [CONTRACTS.md](CONTRACTS.md), your task brief, and the parts of [ARCHITECTURE.md](ARCHITECTURE.md) the brief names.
@@ -40,27 +52,29 @@ A wave is a set of tasks with no dependencies on each other, so they run in para
 
 Status values: `todo`, `running`, `review`, `done`, `blocked`.
 
-| ID | Task | Model | Depends on | Wave | Status |
-|---|---|---|---|---|---|
-| T00 | Scaffold, environment, contracts | Orchestrator | – | 0 | done |
-| T01 | Schema, data models, validation, database helpers | Sonnet 5.5 | T00 | 1 | done |
-| T02 | Data acquisition and source inventory | Sonnet 5.5 | T00 | 1 | done |
-| T03 | Domain seed data: scope, synonyms, resistance facts | Opus 5.5 | T00 | 1 | review (class-family follow-up) |
-| T04 | Evaluation metric functions | Haiku 5.5 | T00 | 1 | done |
-| T05 | Structured loaders and core graph build | Sonnet 5.5 | T01, T02, T03 | 2 | todo (after T03 follow-up) |
-| T06 | PDF ingestion and section-aware chunking | Sonnet 5.5 | T02 | 2 | running |
-| T07 | Entity matcher and linker | Sonnet 5.5 | T03, T06 | 2 | todo (after T03 follow-up) |
-| T08 | Curate guideline recommendations | Opus 5.5 | T02, T03 | 2 | running |
-| T09 | Evaluation questions with gold answers | Opus 5.5 | T02, T03 | 2 | running |
-| T10 | Cypher templates and path output | Opus 5.5 | T05, T08 | 3 | todo |
-| T11 | BM25 and FAISS passage indexes | Sonnet 5.5 | T06 | 3 | todo |
-| T12 | Query parser and intent rules | Sonnet 5.5 | T07 | 3 | todo |
-| T13 | Recommendation extraction experiment | Sonnet 5.5 | T06, T07, T08 | 3 | todo |
-| T14 | Fusion and answer builder | Sonnet 5.5 | T10, T11, T12 | 4 | todo |
-| T15 | Relevant passages for the evaluation questions | Opus 5.5 | T09, T10, T11 | 4 | todo |
-| T16 | Streamlit app | Sonnet 5.5 | T14 | 5 | todo |
-| T17 | Evaluation runner and results | Sonnet 5.5 | T04, T14, T15 | 5 | todo |
-| T18 | Report, README and demo script | Opus 5.5 | T16, T17 | 6 | todo |
+Effort for wave 1 and the first runs of wave 2 was inherited from the orchestrator, before D38; the levels shown for those tasks apply to their follow-ups.
+
+| ID | Task | Model | Effort | Depends on | Wave | Status |
+|---|---|---|---|---|---|---|
+| T00 | Scaffold, environment, contracts | Orchestrator | – | – | 0 | done |
+| T01 | Schema, data models, validation, database helpers | Sonnet 5.5 | medium | T00 | 1 | done |
+| T02 | Data acquisition and source inventory | Sonnet 5.5 | medium | T00 | 1 | done |
+| T03 | Domain seed data: scope, synonyms, resistance facts | Opus 5.5 | high | T00 | 1 | done |
+| T04 | Evaluation metric functions | Haiku 5.5 | low | T00 | 1 | done |
+| T05 | Structured loaders and core graph build | Sonnet 5.5 | medium | T01, T02, T03 | 2 | done |
+| T06 | PDF ingestion and section-aware chunking | Sonnet 5.5 | medium | T02 | 2 | done |
+| T07 | Entity matcher and linker | Sonnet 5.5 | medium | T03, T06 | 2 | done |
+| T08 | Curate guideline recommendations | Opus 5.5 | high | T02, T03 | 2 | done |
+| T09 | Evaluation questions with gold answers | Opus 5.5 | medium | T02, T03 | 2 | done |
+| T10 | Cypher templates and path output | Opus 5.5 | high | T05, T08 | 3 | done |
+| T11 | BM25 and FAISS passage indexes | Sonnet 5.5 | medium | T06 | 3 | done |
+| T12 | Query parser and intent rules | Sonnet 5.5 | medium | T07 | 3 | done |
+| T13 | Recommendation extraction experiment | Sonnet 5.5 | medium | T06, T07, T08 | 3 | done |
+| T14 | Fusion and answer builder | Sonnet 5.5 | high | T10, T11, T12 | 4 | done |
+| T15 | Relevant passages for the evaluation questions | Opus 5.5 | medium | T09, T10, T11 | 4 | done |
+| T16 | Streamlit app | Sonnet 5.5 | medium | T14 | 5 | todo |
+| T17 | Evaluation runner and results | Sonnet 5.5 | medium | T04, T14, T15 | 5 | todo |
+| T18 | Report, README and demo script | Opus 5.5 | high | T16, T17 | 6 | todo |
 
 Waves map to the phases in [PLAN.md](PLAN.md): waves 0–1 are phase 1, wave 2 is phases 2–3, waves 3–4 are phase 4, wave 5 is phase 5, wave 6 is phase 6.
 
@@ -85,10 +99,21 @@ For each handoff the orchestrator:
 | 2026-11-18 | T02 | Accepted. All six sources downloaded automatically. Its requests are decided in D28, D30, D31. |
 | 2026-11-18 | T03 | Accepted with a follow-up: class families, `ClassFamily` synonyms and `schema/phenotypes.csv` (D29). Orchestrator added `DrugClass.family` and `who-aware-2025` to `pipeline/models.py`. |
 
+| 2026-11-18 | T05 | Accepted. Acceptance query re-run by the orchestrator on the live graph: KPC, NDM and OXA-48-like give T03's three sets (milestone M2). Follow-up: recommendations into the graph (D32), `evidence_sources` (D36), MRSA mapping (D35). |
+| 2026-11-18 | T06 | Accepted. 1,428 passages, stable IDs. |
+| 2026-11-18 | T07 | Accepted pending the corpus run, which needed T06's output; follow-up sent. |
+| 2026-11-18 | T08 | Accepted. 80 recommendations; 11 conflicts with the seed data resolved by D34. Follow-up: `regimen_type` and co-producers (D33). |
+| 2026-11-18 | T09 | Accepted. 40 questions with sourced gold answers. Follow-up: keywords for scoring fact and decline answers. |
+
+| 2026-11-18 | T05, T07, T08, T09 | Follow-ups accepted. T07: 3,822 `MENTIONS` edges, 49 of 50 hand-checked links correct. Orchestrator corrected D35 (oxacillin is not in scope, so GLASS Oxacillin stays unmapped) and rebuilt the graph with `--clear`: 17,156 nodes, 35,445 edges, 0 rejected. Mechanism-specific recommendations for CRKP verified by query. |
+| 2026-11-18 | T10–T13 | Accepted. Orchestrator ran the original question end to end (parser → graph search → text search): correct intent, entities and per-mechanism groups, but each group mixed recommended drugs with every non-excluded drug, so D39 splits them. D40–D42 decided. Orchestrator added pathogen short forms (`Kp`, `Ecoli` and others) to `schema/synonyms.csv`. Follow-ups: T08 (three data columns), T10 (read them, D39). |
+| 2026-11-18 | T10 | Follow-up accepted. 713 tests pass (Neo4j running). Orchestrator re-ran the original question: recommended drugs per mechanism are KPC 12, NDM 12, OXA-48-like 11, VIM 7, matching the handoff, with not-excluded-only drugs listed apart (D39). `why_restricted` (colistin) and `recommendation_lookup` (MRSA bloodstream) also checked. Open item for the orchestrator: write `caveat`, `base_drug_ids` and `susceptible_only` onto `Recommendation` nodes in `pipeline/build_core.py`; until then graph search reads them from the CSV. |
+| 2026-11-18 | T14, T15 | Both first sessions stopped without handoffs; restarted as fresh workers on the partial files. Both accepted. 725 tests pass. T14: `answer()` in five modes, same per-mechanism counts as T10 on the original question (milestone M4); contract row updated. T15: 2,084 pooled pairs judged, 345 relevant (113 grade 2); orchestrator spot-checked grade-2 passages for Q01, Q14, Q27. Rulings: D43 (Q38, Q33 gold kept), D44 (scoring rules for T17). |
+
 Files of a task marked done belong to the orchestrator afterwards; a later brief may hand them to another task.
 
 ## Environment facts
 
 - Windows 11, Python 3.11, virtual environment in `.venv` (built on the system packages, so `torch` and `sentence-transformers` are already available).
 - Neo4j runs in Docker from `docker-compose.yml`, as the container `amr-navigator-neo4j`. Docker Desktop must be started by the user; if it is not running, database tests are skipped and the handoff says so. Leave the container running when you finish.
-- The project folder is not a git repository.
+- The project is a git repository pushed to https://github.com/om8P/ResistanceRoute (public). Only the orchestrator commits and pushes; workers never run git commands. Downloaded data in `data/raw/` and generated files in `data/processed/` are not committed (D19).
